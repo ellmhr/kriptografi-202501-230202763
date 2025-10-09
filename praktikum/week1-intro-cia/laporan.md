@@ -1,8 +1,8 @@
 # Laporan Praktikum Kriptografi 
 Minggu ke-: 1
-Topik: 01 Sejarah Kriptografi dan Prinsip CIA  
-Nama: Laeli Maharani 
-NIM: 230202763 
+Topik: 01 Sejarah Kriptografi dan Prinsip CIA
+Nama: Laeli Maharani
+NIM: 230202763
 Kelas: 5IKRB
 
 ---
