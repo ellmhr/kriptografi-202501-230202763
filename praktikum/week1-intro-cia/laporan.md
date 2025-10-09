@@ -8,11 +8,10 @@ Kelas: 5IKRB
 ---
 
 # 1. Tujuan
-(1. Menjelaskan sejarah dan evolusi krprografi dari masa klasik hingga modern.
-(2. Menyebutkan prinsip Confidentallity, Integrity, Availability (CIA) dengan benar
-(3. Menyimpulkan peran kriptografi dalam sistem keamanan informasi modern
-(4. Menyiapkan repositori GitHUb sebagai kerja praktikum
-
+- Menjelaskan sejarah dan evolusi kriptografi dari masa klasik hingga modern.  
+- Menyebutkan prinsip Confidentiality, Integrity, Availability (CIA) dengan benar.  
+- Menyimpulkan peran kriptografi dalam sistem keamanan informasi modern.  
+- Menyiapkan repositori GitHub sebagai media kerja praktikum. 
 ---
 
 # 2. Dasar Teori
