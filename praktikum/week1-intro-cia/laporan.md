@@ -15,8 +15,7 @@ Kelas: 5IKRB
 ---
 
 # 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Kriptografi klasik adalah metode penyandian informasi yang telah digunakan sejak zaman kuno. Dua contoh terkenal dari era ini adalah Caesar Cipher dan Vigenère Cipher.
+Kriptografi klasik adalah metode penyandian informasi yang telah digunakan sejak zaman kuno. Dua contoh terkenal dari era ini adalah Caesar Cipher dan Vigenère Cipher. 
 1. Caesar Cipher: Metode ini dinamai setelah Julius Caesar, yang menggunakan teknik ini untuk mengamankan pesan-pesannya. Dalam Caesar Chiper, setiap huruf dalam pesan digeser sebanyak n posisi di dalam alfabet. Misalnya, dengan n=3, huruf A akan menjadi D, B menjadi E, dan seterusnya. Meskipun sederhana, metode ini mudah diteba dan tidak aman untuk digunakan dalam konteks modern.
 2. Vigenère Cipher: Menggunakan kunci yang lebih kompleks, Vigenère Cipher menggabungkan beberapa Caesar Cipher dengan kunci yang diulang. Setiap huruf dalam kunci menentukan berapa banyak posisi yang harus digeser untuk huruf yang bersangkutan. Meskipun lebih aman dibandingkan Caesar Cipher, metode ini masih rentan terhadap analisis frekuensi.
 
