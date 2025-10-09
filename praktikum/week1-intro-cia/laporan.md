@@ -1,4 +1,4 @@
-# Laporan Praktikum Kriptografi
+# Laporan Praktikum Kriptografi LAELI MAHARANI
 Minggu ke-: X  
 Topik: [judul praktikum]  
 Nama: [Nama Mahasiswa]  
