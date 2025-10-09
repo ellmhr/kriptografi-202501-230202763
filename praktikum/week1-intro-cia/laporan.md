@@ -7,15 +7,15 @@ Kelas: 5IKRB
 
 ---
 
-## 1. Tujuan
-(1. Menjelaskan sejarah dan evolusi krprografi dari masa klasik hingga modern.)
-(2. Menyebutkan prinsip Confidentallity, Integrity, Availability (CIA) dengan benar)
-(3. Menyimpulkan peran kriptografi dalam sistem keamanan informasi modern)
-(4. Menyiapkan repositori GitHUb sebagai kerja praktikum)
+# 1. Tujuan
+(1. Menjelaskan sejarah dan evolusi krprografi dari masa klasik hingga modern.
+(2. Menyebutkan prinsip Confidentallity, Integrity, Availability (CIA) dengan benar
+(3. Menyimpulkan peran kriptografi dalam sistem keamanan informasi modern
+(4. Menyiapkan repositori GitHUb sebagai kerja praktikum
 
 ---
 
-## 2. Dasar Teori
+# 2. Dasar Teori
 (Ringkas teori relevan (cukup 2–3 paragraf).  
 Kriptografi klasik adalah metode penyandian informasi yang telah digunakan sejak zaman kuno. Dua contoh terkenal dari era ini adalah Caesar Cipher dan Vigenère Cipher.
 1. Caesar Cipher: Metode ini dinamai setelah Julius Caesar, yang menggunakan teknik ini untuk mengamankan pesan-pesannya. Dalam Caesar Chiper, setiap huruf dalam pesan digeser sebanyak n posisi di dalam alfabet. Misalnya, dengan n=3, huruf A akan menjadi D, B menjadi E, dan seterusnya. Meskipun sederhana, metode ini mudah diteba dan tidak aman untuk digunakan dalam konteks modern.
