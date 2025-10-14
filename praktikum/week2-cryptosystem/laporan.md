@@ -1,5 +1,5 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
+Minggu ke-: 2 
 Topik: Cryptosystem (Komponen, Enkripsi, dan Dekripsi, Simetris & Asimetris)  
 Nama: Laeli Maharani
 NIM: 230202763  
@@ -15,8 +15,9 @@ Kelas: 5IKRB
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Pada era klasik, metode enkripsi yang digunakan untuk menjaga kerahasiaan informasi bersifat sederhana. Salah satu contohnya adalah Cipher Caesar, yang melakukan penyandian pesan dengan cara menggeser setiap huruf dalam teks asli ke posisi tertentu di dalam alfabet. Misalnya, jika menggunakan kunci pergeseran 3, huruf A akan menjadi D, B menjadi E, dan seterusnya. Teknik ini termasuk dalam kategori substitution cipher karena setiap huruf digantikan dengan huruf lain berdasarkan pola yang telah ditentukan. Meskipun mudah untuk dipahami dan diimplementasikan, Cipher Caesar memiliki tingkat keamanan yang rendah akibat jumlah kunci yang terbatas, sehingga dapat dengan mudah dipecahkan oleh para kriptoanalis.
+
+Selain itu, terdapat juga Vigenere Cipher, yang mengandalkan penggunaan kunci berbentuk kata untuk menggeser huruf secara bergantian. Metode ini menawarkan sedikit peningkatan keamanan dibandingkan dengan teknik sebelumnya, namun tetap rentan terhadap analisis frekuensi dan metode kriptoanalisis yang sederhana. Secara keseluruhan, meskipun metode kriptografi klasik ini efektif pada masanya, mereka tidak mampu menghadapi tantangan yang muncul seiring perkembangan teknik analisis yang lebih canggih.
 
 ---
 
@@ -31,9 +32,9 @@ Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
 ## 4. Langkah Percobaan
 (Tuliskan langkah yang dilakukan sesuai instruksi.  
 Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `simple_crypto.py` di folder `praktikum/week2-cryptosystem/src/`.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menjalankan program dengan perintah `python simple_crypto.py`.)
 
 ---
 
@@ -67,8 +68,13 @@ Hasil eksekusi program Caesar Cipher:
 
 ## 7. Jawaban Pertanyaan
 (Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
+- Pertanyaan 1: Komponen utama dalam sebuah criptosistem :
+- Plaintext : adalah data atau pesan asli yang ingin dilindungi sebelum dienkripsi.
+- Chipertext : Adalah hasil dari proses enkripsi terhadap plaintext. Teks ini sudah dibubah menadi bentuk acak yang dapat dibaca tanpa kunci.
+- Algoritma Kriptografi : Adalah proses atau rumus matematis yang digunakan untuk melakukan enksripsi dan dekripsi. Enkripsi adalah plaintext menjadi chiphertext, Dekripsi: mengubah chiphertext kembali menjadi plaintext.
+- Key (Kunci Kriptografi) Adalah nilai rahasia yang dihunakan oleh algoritma untuk mengenkripsi dan dekripsi data. Jenis jenis kunci : kunci simeteris : satu kunci digunakan untuk enkripsi dan dekripsi. Kunci Asimetris : menggunakan sepasang kunci yaitu publik dan kunci privat.
+- Protokol Kriptografi : Adalah aturan yang menentukan bagaimanan algoritma dan kunci digunakan agar komunikasi tetap aman.
+- Fungsi Hash :: digunakan untuk mengubah data dengan panjang bebas menjadi nilai keluaran dengan panjang tetap. Hasil hash tidak bisa dikembalikan ke bentuk aslinya. Fungsi hash biasanya digunakan untuk menjaga integritas data dan penyimpanan password.
 )
 ---
 
