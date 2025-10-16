@@ -30,40 +30,61 @@ Selain itu, terdapat juga Vigenere Cipher, yang mengandalkan penggunaan kunci be
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
 1. Membuat file `simple_crypto.py` di folder `praktikum/week2-cryptosystem/src/`.
 2. Menyalin kode program dari panduan praktikum.
 3. Menjalankan program dengan perintah `python simple_crypto.py`.)
+4. Membuat ringkasan perbedaan antara kriptosistem simetris dan asimetris.
+5. Mengupload hasil eksekusi di folder `praktikum/week2-cryptosistem/screenshots/`
+6. Menjawab pertanyaan diskusi.
 
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
-
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
 ```
-)
+# file: praktikum/week2-cryptosystem/src/simple_crypto.py
 
+def encrypt(plaintext, key):
+    result = ""
+    for char in plaintext:
+        if char.isalpha():
+            shift = 65 if char.isupper() else 97
+            result += chr((ord(char) - shift + key) % 26 + shift)
+        else:
+            result += char
+    return result
+
+def decrypt(ciphertext, key):
+    result = ""
+    for char in ciphertext:
+        if char.isalpha():
+            shift = 65 if char.isupper() else 97
+            result += chr((ord(char) - shift - key) % 26 + shift)
+        else:
+            result += char
+    return result
+
+if __name__ == "__main__":
+    message = "<230202763><laeli Maharani>"
+    key = 5
+
+    enc = encrypt(message, key)
+    dec = decrypt(enc, key)
+
+    print("Plaintext :", message)
+    print("Ciphertext:", enc)
+    print("Decrypted :", dec)
+```
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Diagram Kriptosystem :
+![Hasil Eksekusi](screenshots/skema kryptosystem.png)
 
-Hasil eksekusi program Caesar Cipher:
-
-![Hasil Eksekusi](screenshots/output.png)
+Hasil eksekusi program Caeshar Chiper :
 ![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
+![Hasil Output](screenshots/P2 - simple crypto.png)
 )
-
+```
 ---
 
 ## 7. Jawaban Pertanyaan
