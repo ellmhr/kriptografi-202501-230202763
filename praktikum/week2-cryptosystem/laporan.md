@@ -76,17 +76,15 @@ if __name__ == "__main__":
 ```
 ---
 
-## 6. Hasil dan Pembahasan
+# 6. Hasil dan Pembahasan
 Diagram Kriptosystem :
-![Hasil Eksekusi](screenshots/skema_cryptosystem.png)
+![Hasil Eksekusi](screenshots/skema_kriptosistem.png)
 
 Hasil eksekusi program Caeshar Chiper :
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/P2 - simple crypto.png)
-)
-```
+![Hasil Input](screenshots/hasil_eksekusi.png)
+
 ---
-```
+
 ## 7. Jawaban Pertanyaan
 (Jawab pertanyaan diskusi yang diberikan pada modul.  
 - Pertanyaan 1: Komponen utama dalam sebuah criptosistem :
