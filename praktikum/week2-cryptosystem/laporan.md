@@ -15,18 +15,17 @@ Kelas: 5IKRB
 ---
 
 ## 2. Dasar Teori
-# Pengertian Kriptosistem 
+Pengertian Kriptosistem :
 Kriptosistem adalah suatu sistem yang digunakan untuk melindungi data agar tidak dibaca oleh pihak yang berwenang. Sistem ini bekerja dengan cara mengubah pesan asli (plaintext) menjadi bentuk sandi (chipertext0 melalui proses enkripsi, dan mengembalikannya lagi ke bentuk semuka melalui proses degnan menggunakan kunci tertentu.
 
-# Komponen Utama Kriptosistem 
+Komponen Utama Kriptosistem 
 Komponen utama dalam kriptosistem meliputi plaintext, chipertext, algoritma enkripsi, algoritma dekripsi, dan kunci. Kunci berfungsi sebagai elemen rahasia yang menentukan hasil enkripsi dan dekripsi, sehingag menjaga kerahasiaan pesan.
 
-# Enkripsi dan Dekripsi
+Enkripsi dan Dekripsi :
 Enkripsi adalah proses mengubah data asli menjadi proses bentuk sandi agar tidak dapat dibaca oleh pihak lain. Sebaliknya, dekripsi adalah proses untuk mengembalikan data yang telah disandikan menjadi bentuk aslinya dengan menggunakan kunci yang sesuai.
 
-# Kriptografi Simeteris dan Asimeteris
+Kriptografi Simeteris dan Asimeteris :
 Dalam kriptografi simteris, kunci yang digunakan untuk enkripsi dan dekripsi adalah sama. Sistem ini cept dan efisien, namun memiliki kelemahan dalam distribusi kunci. Sementara itu, kriptografi asimetris menggunakn dua kunci berbeda, yaitu kunci publik untuk ekripsi dan kunci privat untuk dekripsi yang membuatnya lebih aman ndalam distribusi kunci namun membutuhkan waktu pemrosesan yang lebih lama.
-
 
 ---
 
