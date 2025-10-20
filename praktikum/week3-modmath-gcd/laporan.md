@@ -171,7 +171,7 @@ Hasil eksekusi langkah (1) aritmetika modular
 ![Hasil Eksekusi](screenshots/aritmetika-modular.png)
 
 Hasil eksekusi langkah (2) GCD dan Algoritma Euclidean
-![Hasil Eksekusi](screenshots/gcd-logarithm-euclidean.png)
+![Hasil Eksekusi](screenshots/gcd-algaritma-euclidean.png)
 
 Hasil eksekusi langkah (3) Extended Euclidean Algorithm
 ![Hasil Eksekusi](screenshots/extended-algorithm.png)
@@ -180,7 +180,7 @@ Hasil eksekusi langkah (4) Logaritma Diskrit (Discrete Log)
 ![Hasil Eksekusi](screenshots/discrete-logarithm.png)
 
 Hasil keseluruhan program :
-![Hasil Eksekusi](screenshots/hasil.png)
+![Hasil Eksekusi](screenshots/hasil-keseluruhan.png)
 ---
 
 ## 7. Jawaban Pertanyaan
