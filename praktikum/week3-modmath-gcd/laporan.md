@@ -252,5 +252,5 @@ commit week3-modmath-gcd
 Author: Laeli Maharani <laelimaharani09@gmail.com>
 Date:   2025-10-20
 
-    week3-moodmath-gcd: implementasi Modular Math (Aritmetika Modular, GCD, Bilangan Prima, Logaritma Diskrit)  dan laporan.
+    week3-modmath-gcd: Modular Math (Aritmetika Modular, GCD, Bilangan Prima, Logaritma Diskrit).
 ```
