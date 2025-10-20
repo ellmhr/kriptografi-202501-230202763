@@ -1,10 +1,9 @@
 # Laporan Praktikum Kriptografi
 Minggu ke-: 3  
-Topik: 03 Modular Math (Aritmetika Modular, GCD, Bilangan Prima, Logaritma Diskrit) 
+Topik: Modular Math (Aritmetika Modular, GCD, Bilangan Prima, Logaritma Diskrit) 
 Nama: Laeli Maharani 
 NIM: 230202763 
 Kelas: 5IKRB 
-
 ---
 
 ## 1. Tujuan
@@ -26,7 +25,7 @@ Logatima Diskrit adalah kebalikan dari operasi perpangkatan dalam aritmerika mod
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
+- Python 3.x  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
 - Library tambahan (misalnya pycryptodome, jika diperlukan)  )
@@ -34,9 +33,10 @@ Logatima Diskrit adalah kebalikan dari operasi perpangkatan dalam aritmerika mod
 ---
 
 ## 4. Langkah Percobaan
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+1. Membuat file `aritmetika-modular.py` di folder `praktikum/week3-modmath/src/`.
+2. Membuat file
+3. Menyalin kode program dari panduan praktikum.
+4. Menjalankan program dengan perintah `python caesar_cipher.py`.)
 
 ---
 
