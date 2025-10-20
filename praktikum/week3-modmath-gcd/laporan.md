@@ -32,16 +32,86 @@ Logatima Diskrit adalah kebalikan dari operasi perpangkatan dalam aritmerika mod
 
 ---
 
-## 4. Langkah Percobaan
+# 4. Langkah Percobaan
 1. Membuat file `aritmetika-modular.py` di folder `praktikum/week3-modmath/src/`.
-2. Membuat file
-3. Menyalin kode program dari panduan praktikum.
-4. Menjalankan program dengan perintah `python caesar_cipher.py`.)
-
+2. Membuat file `gcd-logarithm-euclidean.py` di folder `praktikum/week3-modmath/src/`.
+3. Membuat file `extended-algorithm.py` di folder `praktikum/week3-modmath/src/`.
+4. Membuat file `discrete-logarithm.py` di folder `praktikum/week3-modmath/src/`.
+5. Menyalin kode program dari panduan praktikum.
+6. Menjalankan program dengan perintah sesuai nama file.
 ---
 
-## 5. Source Code
-```python
+# 5. Source Code
+1. Langkah (1) Algoritma Modular
+```
+def mod_add(a, b, n): return (a + b) % n
+def mod_sub(a, b, n): return (a - b) % n
+def mod_mul(a, b, n): return (a * b) % n
+def mod_exp(base, exp, n): return pow(base, exp, n)  # eksponensiasi modular
+
+print("7 + 5 mod 12 =", mod_add(7, 5, 12))
+print("7 * 5 mod 12 =", mod_mul(7, 5, 12))
+print("7^128 mod 13 =", mod_exp(7, 128, 13))
+```
+Hasilnya :
+```
+7 + 5 mod 12 = 0
+7 * 5 mod 12 = 11
+7^128 mod 13 = 3
+```
+
+2. Langkah (2) GCD dan Algoritma Euclidean
+```
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+print("gcd(54, 24) =", gcd(54, 24))
+```
+Hasilnya :
+```
+gcd(54, 24) = 6
+```
+
+3. Langkah (3) Extended Euclidean Algorithm
+```
+def egcd(a, b):
+    if a == 0:
+        return b, 0, 1
+    g, x1, y1 = egcd(b % a, a)
+    return g, y1 - (b // a) * x1, x1
+
+def modinv(a, n):
+    g, x, _ = egcd(a, n)
+    if g != 1:
+        return None
+    return x % n
+
+print("Invers 3 mod 11 =", modinv(3, 11))  # hasil: 4
+```
+Hasilnya :
+```
+Invers 3 mod 11 = 4
+```
+
+4. Langkah (4) Logaritma Diskrit (Discrete Log)
+```
+def discrete_log(a, b, n):
+    for x in range(n):
+        if pow(a, x, n) == b:
+            return x
+    return None
+
+print("3^x ≡ 4 (mod 7), x =", discrete_log(3, 4, 7))  # hasil: 4
+```
+Hasilnya : 
+```
+3^x ≡ 4 (mod 7), x = 4
+```
+
+Source Code Keseluruhan : 
+```
 def mod_add(a, b, n): return (a + b) % n
 def mod_sub(a, b, n): return (a - b) % n
 def mod_mul(a, b, n): return (a * b) % n
@@ -80,7 +150,15 @@ def discrete_log(a, b, n):
 
 print("3^x ≡ 4 (mod 7), x =", discrete_log(3, 4, 7))  # hasil: 4
 ```
-
+hasilnya :
+```
+7 + 5 mod 12 = 0
+7 * 5 mod 12 = 11
+7^128 mod 13 = 3
+gcd(54, 24) = 6
+Invers 3 mod 11 = 4
+3^x ≡ 4 (mod 7), x = 4
+```
 ---
 
 ## 6. Hasil dan Pembahasan
@@ -89,9 +167,9 @@ print("3^x ≡ 4 (mod 7), x =", discrete_log(3, 4, 7))  # hasil: 4
 - Jelaskan apakah hasil sesuai ekspektasi.  
 - Bahas error (jika ada) dan solusinya. 
 
-Hasil eksekusi program Caesar Cipher:
+Hasil eksekusi langkah (1) aritmetika modular
 
-![Hasil Eksekusi](screenshots/output.png)
+![Hasil Eksekusi](screenshots/aritmetika-modular.png)
 ![Hasil Input](screenshots/input.png)
 ![Hasil Output](screenshots/output.png)
 )
