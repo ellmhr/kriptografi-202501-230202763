@@ -168,12 +168,19 @@ Invers 3 mod 11 = 4
 - Bahas error (jika ada) dan solusinya. 
 
 Hasil eksekusi langkah (1) aritmetika modular
-
 ![Hasil Eksekusi](screenshots/aritmetika-modular.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
 
+Hasil eksekusi langkah (2) GCD dan Algoritma Euclidean
+![Hasil Eksekusi](screenshots/gcd-logarithm-euclidean.png)
+
+Hasil eksekusi langkah (3) Extended Euclidean Algorithm
+![Hasil Eksekusi](screenshots/extended-algorithm.png)
+
+Hasil eksekusi langkah (4) Logaritma Diskrit (Discrete Log)
+![Hasil Eksekusi](screenshots/discrete-logarithm.png)
+
+Hasil keseluruhan program :
+![Hasil Eksekusi](screenshots/hasil.png)
 ---
 
 ## 7. Jawaban Pertanyaan
@@ -210,8 +217,8 @@ Beberapa penyebab utama kesulitannya :
 )
 ---
 
-## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+# 8. Kesimpulan
+Melalui praktik menggunakan kode Python tersebut, dapat dipahami bahwa konsep aritmetika modular, GCD, bilangan prima, dan logaritma diskrit merupakan dasar penting dalam kriptografi. Operasi seperti penjumlahan, perkalian, dan perpangkatan modular membantu menjaga nilai tetap dalam batas modulus tertentu, sebagaimana diterapkan pada algoritma kriptografi modern. Perhitungan GCD dan invers modular digunakan untuk menentukan bilangan yang relatif prima dan menemukan kunci dalam sistem seperti RSA. Sementara itu, logaritma diskrit menunjukkan kompleksitas perhitungan yang menjadi dasar keamanan algoritma seperti Diffie-Hellman dan ElGamal. Dengan demikian, konsep-konsep matematis ini membentuk fondasi utama dalam pengamanan data digital.
 
 ---
 
