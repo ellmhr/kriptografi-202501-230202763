@@ -94,10 +94,10 @@ Contoh:
 ---
 
 ## 10. Commit Log
-
+```
 commit week1-intro-cia
 Author: Laeli Maharani <laelimaharani09@gmail.com>
 Date:   2025-10-07
 
     week1-intro-cia: Ringkasan sejarah kriptografi, prinsip CIA, jawaban quiz dan dokumentasi screenshoot.
-
+```
