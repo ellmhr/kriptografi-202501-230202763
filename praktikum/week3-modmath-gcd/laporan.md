@@ -162,22 +162,38 @@ Invers 3 mod 11 = 4
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
-
 Hasil eksekusi langkah (1) aritmetika modular
 ![Hasil Eksekusi](screenshots/aritmetika-modular.png)
+Aritmetika modular adalah cara menghitung sisa pembagian suatu bilangan dengan bilangan tertentu (modulus).
+Pada contoh program di atas:
+(7 + 5) mod 12 = 0, karena 12 habis dibagi 12.
+(7 × 5) mod 12 = 11, karena sisa pembagian 35 ÷ 12 adalah 11.
+(7¹²⁸) mod 13 = 3, karena pola perpangkatan 7 mod 13 berulang setiap 8 langkah dan menghasilkan 3.
+Dengan demikian, aritmetika modular membantu menghitung hasil operasi besar secara efisien dengan hanya memperhatikan sisanya, dan prinsip ini menjadi dasar penting dalam kriptografi modern.
 
 Hasil eksekusi langkah (2) GCD dan Algoritma Euclidean
-![Hasil Eksekusi](screenshots/gcd-algaritma-euclidean.png)
+![Hasil Eksekusi](screenshots/gcd-algoritma-euclidean.png)
+GCD (Greatest Common Divisor) atau faktor persekutuan terbesar adalah bilangan terbesar yang dapat membagi dua bilangan tanpa sisa.
+Algoritma Euclidean digunakan untuk mencari GCD dengan cara membagi dua bilangan secara berulang dan mengganti bilangan besar dengan sisa pembagian hingga sisa menjadi nol.
+Pada contoh program di atas:
+54 ÷ 24 = 2 sisa 6
+24 ÷ 6 = 4 sisa 0
+Ketika sisa sudah nol, nilai terakhir sebelum nol yaitu 6 adalah hasil GCD-nya.
+Dengan demikian, algoritma Euclidean membantu menghitung faktor persekutuan terbesar secara cepat dan efisien tanpa perlu mencari semua faktor pembagi secara manual.
 
 Hasil eksekusi langkah (3) Extended Euclidean Algorithm
 ![Hasil Eksekusi](screenshots/extended-algorithm.png)
+Extended Euclidean Algorithm digunkan untuk mencari GCD beserta nilai koefisien x dan y yang memenuhi persamaan a*x + b*y = GCD(a,b). Fungsi ini juga dapat digunakan untuk mencari invers modular, yaitu nilai yang jika dikalikan dengan a menghasilkan 1 (mod n).
+Pada contoh program di atas:
+- GCD(3,11) = 1 Karena relatif prima, inversnya ada.
+- Nilai x yang memenuhi 3*x = 1(mod11) adalah 4.
+Dengan demikian, hasilprogram invers 3 dan mod 11 = 4 menunjukkan bahwa 4 adalah invers dari 3 terhadap 11, karena (3x4)mod11 = 1
 
 Hasil eksekusi langkah (4) Logaritma Diskrit (Discrete Log)
 ![Hasil Eksekusi](screenshots/discrete-logarithm.png)
+Logaritma diskrit adalah metode untuk mencari eksponen (x) pada persamaan a^x = b (mod n).
+Pada kode di atas, nilai x = 4 ditemukan karena 3^4 mod 7 = 4. 
+Konsep ini penting dalam kriptografi karena meskipun mudah dihitung ke satu arah (dari a dan x ke b), sangat sulit untuk dibalik jika bilangan yang digunakan besar menjadikannya dasar dari banyak sistem keananan digital modern.
 
 Hasil keseluruhan program :
 ![Hasil Eksekusi](screenshots/hasil-keseluruhan.png)
@@ -218,7 +234,7 @@ Beberapa penyebab utama kesulitannya :
 ---
 
 # 8. Kesimpulan
-Melalui praktik menggunakan kode Python tersebut, dapat dipahami bahwa konsep aritmetika modular, GCD, bilangan prima, dan logaritma diskrit merupakan dasar penting dalam kriptografi. Operasi seperti penjumlahan, perkalian, dan perpangkatan modular membantu menjaga nilai tetap dalam batas modulus tertentu, sebagaimana diterapkan pada algoritma kriptografi modern. Perhitungan GCD dan invers modular digunakan untuk menentukan bilangan yang relatif prima dan menemukan kunci dalam sistem seperti RSA. Sementara itu, logaritma diskrit menunjukkan kompleksitas perhitungan yang menjadi dasar keamanan algoritma seperti Diffie-Hellman dan ElGamal. Dengan demikian, konsep-konsep matematis ini membentuk fondasi utama dalam pengamanan data digital.
+Dari keempat algoritma yang dipelajari — aritmetika modular, GCD Euclidean, Extended Euclidean, dan logaritma diskrit — dapat disimpulkan bahwa semuanya merupakan dasar penting dalam matematika kriptografi. Aritmetika modular digunakan untuk menghitung operasi dengan sisa dan menjaga nilai dalam batas tertentu, GCD dan Extended Euclidean digunakan untuk mencari faktor persekutuan terbesar serta invers modular yang penting dalam pembentukan kunci, sedangkan logaritma diskrit menjelaskan kesulitan mencari pangkat dalam sistem modulo yang menjadi dasar keamanan sistem kriptografi modern seperti RSA dan Diffie-Hellman. Keempatnya bersama-sama membentuk fondasi utama bagi mekanisme enkripsi dan dekripsi dalam menjaga kerahasiaan data digital.
 
 ---
 
@@ -231,12 +247,10 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week3-modmath-gcd
+Author: Laeli Maharani <laelimaharani09@gmail.com>
+Date:   2025-10-20
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week3-moodmath-gcd: implementasi Modular Math (Aritmetika Modular, GCD, Bilangan Prima, Logaritma Diskrit)  dan laporan.
 ```
