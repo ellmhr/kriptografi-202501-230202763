@@ -165,10 +165,15 @@ Invers 3 mod 11 = 4
 Hasil eksekusi langkah (1) aritmetika modular
 ![Hasil Eksekusi](screenshots/aritmetika-modular.png)
 Aritmetika modular adalah cara menghitung sisa pembagian suatu bilangan dengan bilangan tertentu (modulus).
+
 Pada contoh program di atas:
+
 (7 + 5) mod 12 = 0, karena 12 habis dibagi 12.
+
 (7 × 5) mod 12 = 11, karena sisa pembagian 35 ÷ 12 adalah 11.
+
 (7¹²⁸) mod 13 = 3, karena pola perpangkatan 7 mod 13 berulang setiap 8 langkah dan menghasilkan 3.
+
 Dengan demikian, aritmetika modular membantu menghitung hasil operasi besar secara efisien dengan hanya memperhatikan sisanya, dan prinsip ini menjadi dasar penting dalam kriptografi modern.
 
 Hasil eksekusi langkah (2) GCD dan Algoritma Euclidean
