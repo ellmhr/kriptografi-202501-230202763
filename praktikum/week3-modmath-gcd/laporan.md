@@ -162,10 +162,9 @@ Invers 3 mod 11 = 4
 ---
 
 ## 6. Hasil dan Pembahasan
-Hasil eksekusi langkah (1) aritmetika modular
+# Hasil eksekusi langkah (1) aritmetika modular
 ![Hasil Eksekusi](screenshots/aritmetika-modular.png)
 Aritmetika modular adalah cara menghitung sisa pembagian suatu bilangan dengan bilangan tertentu (modulus).
-
 Pada contoh program di atas:
 
 (7 + 5) mod 12 = 0, karena 12 habis dibagi 12.
@@ -176,31 +175,37 @@ Pada contoh program di atas:
 
 Dengan demikian, aritmetika modular membantu menghitung hasil operasi besar secara efisien dengan hanya memperhatikan sisanya, dan prinsip ini menjadi dasar penting dalam kriptografi modern.
 
-Hasil eksekusi langkah (2) GCD dan Algoritma Euclidean
+# Hasil eksekusi langkah (2) GCD dan Algoritma Euclidean
 ![Hasil Eksekusi](screenshots/gcd-algoritma-euclidean.png)
 GCD (Greatest Common Divisor) atau faktor persekutuan terbesar adalah bilangan terbesar yang dapat membagi dua bilangan tanpa sisa.
 Algoritma Euclidean digunakan untuk mencari GCD dengan cara membagi dua bilangan secara berulang dan mengganti bilangan besar dengan sisa pembagian hingga sisa menjadi nol.
+
 Pada contoh program di atas:
+
 54 ÷ 24 = 2 sisa 6
+
 24 ÷ 6 = 4 sisa 0
+
 Ketika sisa sudah nol, nilai terakhir sebelum nol yaitu 6 adalah hasil GCD-nya.
 Dengan demikian, algoritma Euclidean membantu menghitung faktor persekutuan terbesar secara cepat dan efisien tanpa perlu mencari semua faktor pembagi secara manual.
 
-Hasil eksekusi langkah (3) Extended Euclidean Algorithm
+# Hasil eksekusi langkah (3) Extended Euclidean Algorithm
 ![Hasil Eksekusi](screenshots/extended-algorithm.png)
 Extended Euclidean Algorithm digunkan untuk mencari GCD beserta nilai koefisien x dan y yang memenuhi persamaan a*x + b*y = GCD(a,b). Fungsi ini juga dapat digunakan untuk mencari invers modular, yaitu nilai yang jika dikalikan dengan a menghasilkan 1 (mod n).
 Pada contoh program di atas:
+
 - GCD(3,11) = 1 Karena relatif prima, inversnya ada.
 - Nilai x yang memenuhi 3*x = 1(mod11) adalah 4.
 Dengan demikian, hasilprogram invers 3 dan mod 11 = 4 menunjukkan bahwa 4 adalah invers dari 3 terhadap 11, karena (3x4)mod11 = 1
 
-Hasil eksekusi langkah (4) Logaritma Diskrit (Discrete Log)
+# Hasil eksekusi langkah (4) Logaritma Diskrit (Discrete Log)
 ![Hasil Eksekusi](screenshots/discrete-logarithm.png)
 Logaritma diskrit adalah metode untuk mencari eksponen (x) pada persamaan a^x = b (mod n).
+
 Pada kode di atas, nilai x = 4 ditemukan karena 3^4 mod 7 = 4. 
 Konsep ini penting dalam kriptografi karena meskipun mudah dihitung ke satu arah (dari a dan x ke b), sangat sulit untuk dibalik jika bilangan yang digunakan besar menjadikannya dasar dari banyak sistem keananan digital modern.
 
-Hasil keseluruhan program :
+# Hasil keseluruhan program :
 ![Hasil Eksekusi](screenshots/hasil-keseluruhan.png)
 ---
 
