@@ -1,21 +1,25 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
-
+Minggu ke-: 4  
+Topik: Entropy & Unicity Distance (Evaluasi Kekuatan Kunci dan Brute Force)
+Nama: Laeli Maharani
+NIM: 230202763
+Kelas: 5IKRB
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
-
+1. Menyelesaikan perhitungan sederhana terkait entropi kunci.  
+2. Menggunakan teorema Euler pada contoh perhitungan modular & invers.  
+3. Menghitung **unicity distance** untuk ciphertext tertentu.  
+4. Menganalisis kekuatan kunci berdasarkan entropi dan unicity distance.  
+5. Mengevaluasi potensi serangan brute force pada kriptosistem sederhana.  
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Dalam kriptografi, entropy menggambarkan tingkat ketidakpastian atau keacakan suatu sistem kunci. Semakin tinggi nilai entropi, semakin sulit bagi pihak yang tidak berwenang untuk menebak kunci secara benar. Entropy biasanya diukur dalam satuan bit, dan menunjukkan berapa banyak kemungkinan kombinasi kunci yang bisa digunakan dalam suatu algoritma. Misalnya, kunci sepanjang 128 bit memiliki 2^128 kemungkinan kombinasi, yang menjadikannya sangat sulit dipecahkan dengan brute force.
 
+Unicity distance adalah ukuran yang menunjukkan jumlah data terenkripsi (ciphertext) minimum yang diperlukan agar serangan kriptanalisis dapat menentukan satu kunci yang benar secara unik. Jika ciphertext yang tersedia lebih kecil dari unicity distance, maka masih terdapat banyak kemungkinan kunci yang dapat menghasilkan pesan yang masuk akal. Dengan kata lain, semakin besar nilai unicity distance, semakin kuat sistem kriptografi terhadap serangan analisis.
+
+Dalam konteks brute force attack, penyerang mencoba semua kemungkinan kunci hingga menemukan yang cocok untuk mendekripsi pesan. Kekuatan sistem kriptografi bergantung pada kombinasi tingginya entropy dan besarnya unicity distance, yang membuat pencarian kunci dengan brute force menjadi sangat tidak efisien dan memakan waktu lama. Oleh karena itu, kedua konsep ini penting dalam menilai tingkat keamanan suatu algoritma kriptografi modern.
 ---
 
 ## 3. Alat dan Bahan
