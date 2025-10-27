@@ -125,7 +125,13 @@ Waktu brute force AES-128 = 3.938453320844195e+27 hari
 ## 6. Hasil dan Pembahasan
 # Hasil eksekusi langkah (1) (perhitungan entropy)
 ![Hasil Eksekusi](screenshots/L1-perhitungan-entropy.png)
-![Hasil Input](screenshots/input.png)
+Makna dari Hasil Perhitungan:
+Nilai 4,7 bit menunjukkan bahwa sistem dengan 26 kemungkinan kunci memiliki tingkat keacakan rendah, udah ditebak karena jumlah kemungkinan sedikit (mirip seperti memilih satu huruf dari alfabet).
+Nilai 128 bit berarti ruang kunci sangat besar (sekitar 3,4 x 10^38 kemungkinan). Ini menunjukkan tingkat keamanan yang tinggi, karena akan sangat sulit bagi serangan brute force untuk mencoba semua kemungkinan kunci.
+Semakin besar nilai entropy (dalam bit), semakin tinggi tingkat keacakan dan semakin sulit sistem tersebut dipecakan. Dengan demikian, kunci 128-bit memiliki keamanan jauh lebih kuat dibandingkan ruang kunci kecil seperti 26, karena kemungkinan kombinasi yang harus dicoba penyerang meningkat secara eksponensial.
+
+# Hasil eksekusi langkah (2) Menghitung unicity distance
+![Hasil Eksekusi](screenshots/L2-unicity-distance.png)
 ![Hasil Output](screenshots/output.png)
 )
 
