@@ -132,21 +132,46 @@ Semakin besar nilai entropy (dalam bit), semakin tinggi tingkat keacakan dan sem
 
 # Hasil eksekusi langkah (2) Menghitung unicity distance
 ![Hasil Eksekusi](screenshots/L2-unicity-distance.png)
-![Hasil Output](screenshots/output.png)
-)
+Keterangan variabel :
+HK: entropy kunci (jumlah bit informasi pada ruang kunci).
+R: redudansi bahasa, yaitu tingkat keteraturan dalam bahasa alami. Untuk bahasa inggris rata rata sekitar 0,75
+A: jumlah alfabet yang digunakan dalam caesar chiper ada 26 huruf).
+Nilai 1,33 berarti bahwa dibutuhkan sekitar satu hingga dua huruf ciphertext untuk bisa menebak kunci Caesar Cipher secara pasti.
+Dengan kata lain, Caesar Cipher sangat lemah, karena jumlah data yang sangat sedikit saja sudah cukup untuk menentukan kuncinya melalui analisis frekuensi huruf atau brute force.
 
+# Hasil eksekusi langkah (3) Analisis brute force
+![Hasil Eksekusi](screenshots/L3-brute-force.png)
+Makna dari hasil : Caesar Cipher hanya memiliki 26 kemungkinan kunci, sehingga dapat dipecahkan hampir seketika dengan brute force.
+AES-128 memilliki 2^128 kemungkinan kunci, yang begitu besar sehingga tidak mungkin dipecahkan secara brute force, bahkan dengan komputer super tercepat sekalipun.
+Perhitungan ini menunjukkan bahwa ukuran ruang kunci (keyspace) sangat menentukan kekuatan algoritma kriptografi.
+Semakin banyak kemungkinan kunci, semakin besar waktu yang dibutuhkan untuk brute force.
+Caesar Cipher sangat lemah karena ruang kuncinya kecil, sedangkan AES-128 sangat aman karena jumlah kombinasi kuncinya sangat besar dan tidak realistis untuk dicoba semua dalam waktu yang masuk akal.
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+1: Arti dari nilai entropy dalam konteks kekuatan kunci:
+Entropy dalam kriptografi menggambarkan tingkat keacakan atau ketidakpastian suatu kunci. Semakin tinggi nilai entropy (dalam satuan bit), semakin banyak kemungkinan kunci yang dapat digunakan, sehingga semakin sulit bagi penyerang untuk menebak atau mencoba semua kunci secara brute force.
+Secara sederhan : 
+- Entropy tinggi → ruang kunci besar → banyak kombinasi → sistem lebih aman.
+- Entropy rendah → ruang kunci kecil → sedikit kombinasi → mudah ditebak atau dipecahkan.
+
+2: Mengapa unicity distance penting dalam menentukan keamanan suatu cipher
+Unicity distance penting karena menunjukkan seberapa banyak ciphertext (pesan terenkripsi) yang dibutuhkan agar penyerang dapat menemukan satu kunci yang benar secara unik melalui analisis kriptografi.
+Dengan kata lain, semakin kecil nilai unicity distance, semakin mudah suatu cipher dipecahkan, karena penyerang hanya perlu sedikit ciphertext untuk memastikan kuncinya. Sebaliknya, semakin besar nilai unicity distance, semakin aman cipher tersebut, karena dibutuhkan lebih banyak ciphertext agar analisis kriptografi bisa berhasil menemukan kunci yang tepat.
+Unicity distance dipengaruh oleh dua hal utama :
+- Entropy kunci (Hₖ): semakin besar ruang kunci → semakin sulit ditebak → unicity distance meningkat.
+- Redundansi bahasa (R): semakin tinggi keteraturan bahasa (misalnya dalam teks bahasa alami) → semakin mudah dianalisis → unicity distance menurun.
+
+3. Mengapa brute force masih menjadi ancaman meskipun algoritma sudah kuat?
+Brute force masih menjadi ancaman meskipun algoritma kriptografi sudah kuat, karena serangan ini tidak bergantung pada kelemahan logika atau struktur algoritma, melainkan murni mencoba semua kemungkinan kunci hingga menemukan yang benar. Artinya, bahkan algoritma terenkripsi paling aman sekalipun seperti AES bisa saja dipecahkan — hanya saja membutuhkan waktu yang sangat lama jika kuncinya cukup panjang.
+
+Ancaman ini tetap relevan karena kemajuan teknologi komputasi terus meningkat. Superkomputer, komputasi paralel, hingga perkembangan komputasi kuantum berpotensi mempercepat proses brute force secara drastis. Selain itu, jika pengguna menggunakan kunci yang lemah, terlalu pendek, atau mudah ditebak, maka waktu brute force menjadi jauh lebih singkat.
+
+Oleh karena itu, meskipun algoritma kriptografi modern aman secara teoritis, keamanan praktisnya tetap tergantung pada kekuatan kunci. Penggunaan kunci yang panjang, acak, dan kompleks sangat penting untuk mencegah brute force menjadi ancaman nyata.
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
-
+Entropy dan Unicity Distance merupakan konsep penting dalam menilai kekuatan kunci kriptografi. Entropy menunjukkan tingkat keacakan kunci — semakin tinggi nilainya, semakin sulit kunci ditebak. Sementara Unicity Distance menunjukkan jumlah ciphertext yang dibutuhkan untuk menemukan satu kunci yang benar — semakin besar nilainya, semakin aman cipher tersebut. Melalui evaluasi ini dapat dipahami bahwa kekuatan sistem kriptografi tidak hanya bergantung pada algoritmanya, tetapi juga pada panjang, keacakan, dan jumlah kemungkinan kunci yang digunakan agar tahan terhadap serangan brute force.
 ---
 
 ## 9. Daftar Pustaka
