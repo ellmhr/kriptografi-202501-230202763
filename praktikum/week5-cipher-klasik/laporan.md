@@ -174,15 +174,10 @@ Misalnya, dalam bahasa Indonesia atau Inggris, huruf seperti "E" atau "A" muncul
 Dengan kata lain, cipher klasik tidak cukup acak dan tidak menyembunyikan struktur statistik bahasa, sehingga sangat mudah dipecahkan menggunakan analisis frekuensi, bahkantanpa mengetahui kunci secara langsung.
 
 3. Bandingkan kelebihan dan kelemahan cipher subsitusi vs transposisi
-| Jenis Cipher   | Kelebihan                                                                 | Kelemahan                                                                                         |
-|----------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| **Substitusi** | Sederhana dan mudah diimplementasikan; proses enkripsi cepat.             | Pola frekuensi huruf masih terlihat sehingga mudah dianalisis; tidak cukup kuat untuk kripto modern. |
-| **Transposisi**| Menyembunyikan pola teks dengan mengubah posisi huruf; lebih sulit dianalisis frekuensi. | Huruf tidak berubah sehingga masih bisa dipecahkan lewat analisis pola atau brute force; kurang aman jika berdiri sendiri. |
-
----
-
-## 8. Kesimpulan
-Kesimpulannya, cipher klasik seperti Caesar, Vigenere, dan Transposisi merupakan dasar penting dalam perkembangan kriptografi modern. Cipher ini bekerja dengan prinsip sederhana -- mengganti atau menukar posisi huruf -- untuk menyembunyikan pesan. Namun, karena pola huruf dan struktur bahasa masih terlihat, cipher klasik mudah dipecahkan dengan alaisis frekuensi atau brute force. Meskipun tidak lagi digunakan untuk keamanan modern, cipher klasik tetap penting sebagai pondasi pemahaman konsep enkripsi dan keamanan dta dalam kriptografi.
+  1. Ciper Substitusi
+  - Kelebihan:
+  -
+## 8. Kesimpulan\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nting dalam perkembangan kriptografi modern. Cipher ini bekerja dengan prinsip sederhana -- mengganti atau menukar posisi huruf -- untuk menyembunyikan pesan. Namun, karena pola huruf dan struktur bahasa masih terlihat, cipher klasik mudah dipecahkan dengan alaisis frekuensi atau brute force. Meskipun tidak lagi digunakan untuk keamanan modern, cipher klasik tetap penting sebagai pondasi pemahaman konsep enkripsi dan keamanan dta dalam kriptografi.
 
 ---
 
