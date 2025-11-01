@@ -1,20 +1,26 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 5  
+Topik: Chiper Kasik (Caesar, Vigenere, Transposisi)  
+Nama: Laeli Maharani  
+NIM: 230202763  
+Kelas: 5IKRB  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Menerapkan algoritma Caeshar Chiper untuk enkripsi dan dekripsi teks.
+2. Menerapkan algoritma Vigenere Chiper dengan variasi kunci.
+3. Mengimplementasikan algoritma transposisi sederhana
+4. Menjelaskan kelemahan algoritma kriptografi klasik.
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Chiper klasik adalah metode kriptografi awal yang digunakan untuk menyembunyikan pesan dengan cara sederhana, sebelum munculnya algoritma modern. Ada tiga jenis chiper kasik yang paling dikena, yaitu Caesar Chiper, Vigenere Chiper, dan Transposisi Chiper.
+- Caesar Chiper bekerja dengan menggeser setiap huruf dalam teks asli sejumlah posisi tertentu dalam alfabet. Misalnya, dengan pergeseran 3, huruf A menjadi D, B menjadi E, dan seterusnya. Chiper ini mudah diimplementasikan namun sangat lemah karena hanya memiliki sedikit kemungkinan kunci (26 kemungkinan).
+- Vigenere Chiper merupakan pengembangan dari Caesar Chiper yang menggunakan kunci berupa kata. Setiap huruf kunci menentukan pergeseran berbeda pada huruf pesan. Metode ini lebih kuat dibanding Caesar karena variasi pergeseran lebih banyak, meski tetap dapat dipecahkan dengan analisis frekuensi huruf jika kuncinya pendek.
+- Transposisi Cipher tidak mengubah huruf, tetapi mengubah urutan posisi huruf dalam pesan berdasarkan pola tertentu (misalnya kolom atau baris). Chiper bergantung pada aturan pengurutan, bukan pada penggantian karakter.
+Secara umum, ciper klasik berperan penting dalam sejarah kriptografi karena menjadi dasar bagi perkembangan sistem enkripsi modern, meskipun tingkat keamanannya sudah tidak memadai untuk penggunaan saat ini.
 
 ---
 
