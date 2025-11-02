@@ -34,11 +34,12 @@ Secara umum, ciper klasik berperan penting dalam sejarah kriptografi karena menj
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+1. Membuat file `caesar.py` di folder `praktikum/week5-cipher-klasik/src/`.
+2. Membuat file `vigenere.py` di folder `praktikum/week5-cipher-klasik/src/`.
+3. Membuat file `transpose.py` di folder `praktikum/week5-cipher-klasik/src/`.
+4. Membuat folder `screenshots` di foler `praktikum/week5-cipher-klasik/src/`.
+5. Menyalin kode program dari panduan praktikum.
+6. Menjalankan program dengan perintah sesuai nama file.
 
 ---
 
@@ -144,7 +145,7 @@ print("Decrypted :", dec)
 ---
 
 ## 6. Hasil dan Pembahasan
-# Hasil eksekusi langkah (1) Implementasi Caesar Cipher:
+Hasil eksekusi langkah (1) Implementasi Caesar Cipher:
 ![Hasil Eksekusi](screenshots/1-caesar.png)
 Caesar Cipher adalah metode enkripsi klasik yang bekerja dengan cara menggeser setiap huruf dalam teks asli sebanyak nilai kunci tertentu. Jika pergeseran melewati huruf Z, maka akan kembali ke A (menggunakan operasi mod 26).
 
@@ -154,7 +155,7 @@ Contoh perhitungan : huruf C dengan key = 3 menjadi F, karena C (posisi ke-2) di
 
 Kesimpulannya, Caesar Cipher menyandikan pesan dengan pergeseran huruf secara tetap, dan mudah dipecahkan jika kuncinya kecil atau pola gesernya diketahui.
 
-# Hasil eksekusi langkah (2) Implementasi Vigenere Cipher
+Hasil eksekusi langkah (2) Implementasi Vigenere Cipher
 ![Hasil Ekesekusi](screenshots/2-vigenere.png)
 Vigenere Cipher adalah metode enkripsi klasik yang menggunakan kata kunci (key) untuk menentukan jumlah pergeseran setiap huruf pada plaintext. Tidak seperti Caesar Cipher yang menggunakan satu angka kunci tetap, setiap huruf pada key menentukan pergeseran berbeda, sehingga hasil enkripsi lebih sulit ditebak.
 
@@ -170,7 +171,7 @@ I(+24) → G
 dan seterusnya, menghasilkan ciphertext UVGZXMQVVPM. Ketika didekripsi dengan kunci yang sama, hasilnya kembali ke KRIPTOGRAFI.
 Kesimpulannya, Vigenere Cipher menyadikan pesan dengan pola pergeseran yang berubah-ubah mengikuti kunci, membuatnya lebih kuat dari Caesar Cipher, namun masih dapat dipecahkan jika panjang kuni diketahui melalui analisis frekuensi.
 
-# Hasil eksekusi langkah (3) Implementasi Transposisi Sederhana
+Hasil eksekusi langkah (3) Implementasi Transposisi Sederhana
 ![Hasil Eksekusi](screenshots/3-transposisi.png)
 Transposisi Cipher adalah metode penyandian yang tidak mengubah huruf asli, tetapi mengubah urutan (posisi) huruf dalam pesan Artinya, huruf-huruf tetap sama, hanya diacak berdasarkan pola tertentu.
 
