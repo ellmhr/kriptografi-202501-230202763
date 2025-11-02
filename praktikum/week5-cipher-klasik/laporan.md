@@ -172,22 +172,22 @@ Hasil eksekusi program Caesar Cipher:
   Misalnya, dalam bahasa Indonesia atau Inggris, huruf seperti "E" atau "A" muncul lebih sering dibandingakan huruf lain. Jika cipher tidak mengubah pola tersebut (seperti pada Caesar Cipher atau Vigenere Cipher dengan kunci pendek), maka penyerang dapat mencocokkan pola kemungkinan huruf terenkripsi dengan distribusi huruf bahasa alami untuk menebak huruf aslinya.
 
   Dengan kata lain, cipher klasik tidak cukup acak dan tidak menyembunyikan struktur statistik bahasa, sehingga sangat mudah dipecahkan menggunakan analisis frekuensi, bahkantanpa mengetahui kunci secara langsung.
-
+  
 3. Bandingkan kelebihan dan kelemahan cipher subsitusi vs transposisi
-  1. Ciper Substitusi
-     - Kelebihan:
-       - Konsepnya sederhana dan mudah diimplementasikan.
-       - Dapat memberikan hasil enkripsi depat karena hanya mengganti huruf dengan huruf lain..
-     - Kelemahan :
-       - Pola frekuensi huruf tetap terlihat, sehingga mudah diserang dengan analisis frekuensi.
-       - Tidak cukup kuat untuk digunakan dalam kriptografi modern.
-  2. Cipher Transposisi
-     - Kelebihan :
-       - Menyembunyikan pola teks asli dengan cara mengubah posisi huruf, bukan mengganti hurufnya.
-       - Lebih sulit dianalisis dengan analisis frekuensi dibanding substitusi.
-     - Kelemahan :
-       - Struktur huruf tetap sama (huruf yang digunakan tidak berubahS). sehingga masih bisa dipecahkan dengan analisis pola atau serangan brute force.
-       - Kurang aman jika digunakan sendriri tanpa dikombinasikan dengan metode lain.
+  - Ciper Substitusi
+    - Kelebihan:
+      - Konsepnya sederhana dan mudah diimplementasikan.
+      - Dapat memberikan hasil enkripsi depat karena hanya mengganti huruf dengan huruf lain..
+    - Kelemahan :
+      - Pola frekuensi huruf tetap terlihat, sehingga mudah diserang dengan analisis frekuensi.
+      - Tidak cukup kuat untuk digunakan dalam kriptografi modern.
+ - Cipher Transposisi
+    - Kelebihan :
+      - Menyembunyikan pola teks asli dengan cara mengubah posisi huruf, bukan mengganti hurufnya.
+      - Lebih sulit dianalisis dengan analisis frekuensi dibanding substitusi.
+    - Kelemahan :
+      - Struktur huruf tetap sama (huruf yang digunakan tidak berubahS). sehingga masih bisa dipecahkan dengan analisis pola atau serangan brute force.
+      - Kurang aman jika digunakan sendriri tanpa dikombinasikan dengan metode lain.
 
 ## 8. Kesimpulan
 Cipher klasik seperti Caesar, VIgenere, dan Transposisi merupakan dasar penting dalam perkembangan kriptografi modern. Cipher ini bekerja dengan prinsip sederhana -- mengganti atau menukar posisi huruf -- untuk menyembunyikan pesan. Namun, karena pola huruf dan struktur bahasa masih terlihat, cipher klasik mudah dipecahkan dengan alaisis frekuensi atau brute force. Meskipun tidak lagi digunakan untuk keamanan modern, cipher klasik tetap penting sebagai pondasi pemahaman konsep enkripsi dan keamanan dta dalam kriptografi.
