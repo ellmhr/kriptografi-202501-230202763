@@ -8,17 +8,17 @@ Kelas: 5IKRB
 ---
 
 ## 1. Tujuan
-1. Menerapkan algoritma Caeshar Chiper untuk enkripsi dan dekripsi teks.
-2. Menerapkan algoritma Vigenere Chiper dengan variasi kunci.
+1. Menerapkan algoritma Caeshar Cipher untuk enkripsi dan dekripsi teks.
+2. Menerapkan algoritma Vigenere Cipher dengan variasi kunci.
 3. Mengimplementasikan algoritma transposisi sederhana
 4. Menjelaskan kelemahan algoritma kriptografi klasik.
 
 ---
 
 ## 2. Dasar Teori
-Chiper klasik adalah metode kriptografi awal yang digunakan untuk menyembunyikan pesan dengan cara sederhana, sebelum munculnya algoritma modern. Ada tiga jenis chiper kasik yang paling dikena, yaitu Caesar Chiper, Vigenere Chiper, dan Transposisi Chiper.
-- Caesar Chiper bekerja dengan menggeser setiap huruf dalam teks asli sejumlah posisi tertentu dalam alfabet. Misalnya, dengan pergeseran 3, huruf A menjadi D, B menjadi E, dan seterusnya. Chiper ini mudah diimplementasikan namun sangat lemah karena hanya memiliki sedikit kemungkinan kunci (26 kemungkinan).
-- Vigenere Chiper merupakan pengembangan dari Caesar Chiper yang menggunakan kunci berupa kata. Setiap huruf kunci menentukan pergeseran berbeda pada huruf pesan. Metode ini lebih kuat dibanding Caesar karena variasi pergeseran lebih banyak, meski tetap dapat dipecahkan dengan analisis frekuensi huruf jika kuncinya pendek.
+Cipher klasik adalah metode kriptografi awal yang digunakan untuk menyembunyikan pesan dengan cara sederhana, sebelum munculnya algoritma modern. Ada tiga jenis chiper kasik yang paling dikena, yaitu Caesar Cipher, Vigenere Cipher, dan Transposisi Cipher.
+- Caesar Cipher bekerja dengan menggeser setiap huruf dalam teks asli sejumlah posisi tertentu dalam alfabet. Misalnya, dengan pergeseran 3, huruf A menjadi D, B menjadi E, dan seterusnya. Cipher ini mudah diimplementasikan namun sangat lemah karena hanya memiliki sedikit kemungkinan kunci (26 kemungkinan).
+- Vigenere Cipher merupakan pengembangan dari Caesar Cipher yang menggunakan kunci berupa kata. Setiap huruf kunci menentukan pergeseran berbeda pada huruf pesan. Metode ini lebih kuat dibanding Caesar karena variasi pergeseran lebih banyak, meski tetap dapat dipecahkan dengan analisis frekuensi huruf jika kuncinya pendek.
 - Transposisi Cipher tidak mengubah huruf, tetapi mengubah urutan posisi huruf dalam pesan berdasarkan pola tertentu (misalnya kolom atau baris). Chiper bergantung pada aturan pengurutan, bukan pada penggantian karakter.
   
 Secara umum, ciper klasik berperan penting dalam sejarah kriptografi karena menjadi dasar bagi perkembangan sistem enkripsi modern, meskipun tingkat keamanannya sudah tidak memadai untuk penggunaan saat ini.
@@ -74,7 +74,7 @@ Plaintext : CLASSIC CIPHER
 Ciphertext: FODVVLF FLSKHU
 Decrypted : CLASSIC CIPHER
 ```
-Langkah 2 -- Implementasi Vigerere Cipher
+Langkah 2 -- Implementasi Vigenere Cipher
 ```
 def vigenere_encrypt(plaintext, key):
     result = []
@@ -166,7 +166,7 @@ Hasil eksekusi langkah (1) Implementasi Caesar Cipher:
 ![Hasil Eksekusi](screenshots/1-caesar.png)
 Caesar Cipher adalah metode enkripsi klasik yang bekerja dengan cara menggeser setiap huruf dalam teks asli sebanyak nilai kunci tertentu. Jika pergeseran melewati huruf Z, maka akan kembali ke A (menggunakan operasi mod 26).
 
-Pada kode di atas, fungsi caesar_encrypt membaca setiap huruf, mengubahnya ke kode ASCII, kemudian menghitung posisi barunya dengan rumus (ord(char) -shift + key) % 26 + shif. Fungsi caesar_decrypt melakukan hal yang sama namun dengan kunci negatif untuk mengembalikan teks ke bentuk semula.
+Pada kode di atas, fungsi `caesar_encrypt` membaca setiap huruf, mengubahnya ke kode ASCII, kemudian menghitung posisi barunya dengan rumus `(ord(char) -shift + key) % 26 + shif`. Fungsi `caesar_decrypt` melakukan hal yang sama namun dengan kunci negatif untuk mengembalikan teks ke bentuk semula.
 
 Contoh perhitungan : huruf C dengan key = 3 menjadi F, karena C (posisi ke-2) digeser tiga langkah ke kanan (D, E, F). Dengan plaintext "CLASSIC CIPHER" dan key = 3, hasil enkripsi adalah "FODVVLF FLSKHU". Setelah didekripsi dengan kunci yang sama, teks kembali menjadi "CLASSIC CIPHER".
 
@@ -176,7 +176,7 @@ Hasil eksekusi langkah (2) Implementasi Vigenere Cipher
 ![Hasil Ekesekusi](screenshots/2-vigenere.png)
 Vigenere Cipher adalah metode enkripsi klasik yang menggunakan kata kunci (key) untuk menentukan jumlah pergeseran setiap huruf pada plaintext. Tidak seperti Caesar Cipher yang menggunakan satu angka kunci tetap, setiap huruf pada key menentukan pergeseran berbeda, sehingga hasil enkripsi lebih sulit ditebak.
 
-Pada kode di atas, setiap huruf pada key diubah menjadi nilai pergeseran dengan rumus shift =ord(key[i]) - 97, di mana a=0, b=1, dan seterusnya. Huruf pada plaintext kemudian digeser sesuai nilai shift tersebut menggunakan operasi (ord(char) - base + shift) % 26 + base. Proses dekripsi dilakukan dengan menggeser ke arah sebaliknya (mengurangi shift).
+Pada kode di atas, setiap huruf pada key diubah menjadi nilai pergeseran dengan rumus `shift =ord(key[i]) - 97`, di mana `a=0`, `b=1`, dan seterusnya. Huruf pada plaintext kemudian digeser sesuai nilai shift tersebut menggunakan operasi `(ord(char) - base + shift) % 26 + base`. Proses dekripsi dilakukan dengan menggeser ke arah sebaliknya (mengurangi shift).
 
 Contoh :
 Plaintext: KRIPTOGRAFI
@@ -195,8 +195,8 @@ Transposisi Cipher adalah metode penyandian yang tidak mengubah huruf asli, teta
 Pada kode di atas, proses enkripsi dilakukan dengan menulis teks secara berkolom, kemudian membaca huruf-hurufnya per kolom dari atas ke bawah.
 
 Penjelasan enkripsi
-Fungsi transpose_encrypt() bekerja dengan :
-- Membuat sejumlah kolom sesuai dengan nilai key (misalnya 5).
+Fungsi `transpose_encrypt()` bekerja dengan :
+- Membuat sejumlah kolom sesuai dengan nilai `key` (misalnya 5).
 - Huruf plaintext ditulis berurutan ke bawah tiap kolom, lalu hasilnya dibaca dari kolom pertama ke terakhir.
 - Hasil akhirnya adalah susunan huruf yang berpindah posisi.
 
@@ -216,7 +216,7 @@ Kemudian dibaca kolom demi kolom menghasikan:
 Ciphertext = TPIPROOHASNENICRSTI 
 
 Penjelasan dekripsi 
-fungsi transpose_decrypt melakukan proses kebalikan yaitu :
+fungsi `transpose_decrypt` melakukan proses kebalikan yaitu :
 - Menentukan jumlah baris dan kolom
 - Mengembalikan urutan huruf ke posisi semula berdasarkan pola pembacaan kolom.
 - Hasil akhirnya kembali menjadi plaintext semula.
@@ -257,7 +257,7 @@ Transposisi cipher menyandikan pesan dengan mengubah urutan huruf berdasarkan ju
       - Kurang aman jika digunakan sendriri tanpa dikombinasikan dengan metode lain.
 
 ## 8. Kesimpulan
-Cipher klasik seperti Caesar, VIgenere, dan Transposisi merupakan dasar penting dalam perkembangan kriptografi modern. Cipher ini bekerja dengan prinsip sederhana -- mengganti atau menukar posisi huruf -- untuk menyembunyikan pesan. Namun, karena pola huruf dan struktur bahasa masih terlihat, cipher klasik mudah dipecahkan dengan alaisis frekuensi atau brute force. Meskipun tidak lagi digunakan untuk keamanan modern, cipher klasik tetap penting sebagai pondasi pemahaman konsep enkripsi dan keamanan dta dalam kriptografi.
+Cipher klasik seperti Caesar, Vigenere, dan Transposisi merupakan dasar penting dalam perkembangan kriptografi modern. Cipher ini bekerja dengan prinsip sederhana -- mengganti atau menukar posisi huruf -- untuk menyembunyikan pesan. Namun, karena pola huruf dan struktur bahasa masih terlihat, cipher klasik mudah dipecahkan dengan alaisis frekuensi atau brute force. Meskipun tidak lagi digunakan untuk keamanan modern, cipher klasik tetap penting sebagai pondasi pemahaman konsep enkripsi dan keamanan dta dalam kriptografi.
 
 ---
 
