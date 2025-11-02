@@ -144,19 +144,65 @@ print("Decrypted :", dec)
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil eksekusi langkah (1) Implementasi Caesar Cipher:
+![Hasil Eksekusi](screenshots/1-caesar.png)
+Caesar Cipher adalah metode enkripsi klasik yang bekerja dengan cara menggeser setiap huruf dalam teks asli sebanyak nilai kunci tertentu. Jika pergeseran melewati huruf Z, maka akan kembali ke A (menggunakan operasi mod 26).
 
-Hasil eksekusi program Caesar Cipher:
+Pada kode di atas, fungsi caesar_encrypt membaca setiap huruf, mengubahnya ke kode ASCII, kemudian menghitung posisi barunya dengan rumus (ord(char) -shift + key) % 26 + shif. Fungsi caesar_decrypt melakukan hal yang sama namun dengan kunci negatif untuk mengembalikan teks ke bentuk semula.
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Contoh perhitungan : huruf C dengan key = 3 menjadi F, karena C (posisi ke-2) digeser tiga langkah ke kanan (D, E, F). Dengan plaintext "CLASSIC CIPHER" dan key = 3, hasil enkripsi adalah "FODVVLF FLSKHU". Setelah didekripsi dengan kunci yang sama, teks kembali menjadi "CLASSIC CIPHER".
 
----
+Kesimpulannya, Caesar Cipher menyandikan pesan dengan pergeseran huruf secara tetap, dan mudah dipecahkan jika kuncinya kecil atau pola gesernya diketahui.
+
+Hasil eksekusi langkah (2) Implementasi Vigenere Cipher
+![Hasil Ekesekusi](screenshots/2-vigenere.png)
+Vigenere Cipher adalah metode enkripsi klasik yang menggunakan kata kunci (key) untuk menentukan jumlah pergeseran setiap huruf pada plaintext. Tidak seperti Caesar Cipher yang menggunakan satu angka kunci tetap, setiap huruf pada key menentukan pergeseran berbeda, sehingga hasil enkripsi lebih sulit ditebak.
+
+Pada kode di atas, setiap huruf pada key diubah menjadi nilai pergeseran dengan rumus shift =ord(key[i]) - 97, di mana a=0, b=1, dan seterusnya. Huruf pada plaintext kemudian digeser sesuai nilai shift tersebut menggunakan operasi (ord(char) - base + shift) % 26 + base. Proses dekripsi dilakukan dengan menggeser ke arah sebaliknya (mengurangi shift).
+
+Contoh :
+Plaintext: KRIPTOGRAFI
+Key : KEY (K=10, E=4, Y=24)
+Setiap huruf plaintext digeser bedsarkan huruf kunci secara berulang:
+K(+10) → U
+R(+4) → V
+I(+24) → G
+dan seterusnya, menghasilkan ciphertext UVGZXMQVVPM. Ketika didekripsi dengan kunci yang sama, hasilnya kembali ke KRIPTOGRAFI.
+Kesimpulannya, Vigenere Cipher menyadikan pesan dengan pola pergeseran yang berubah-ubah mengikuti kunci, membuatnya lebih kuat dari Caesar Cipher, namun masih dapat dipecahkan jika panjang kuni diketahui melalui analisis frekuensi.
+
+Hasil eksekusi langkah (3) Implementasi Transposisi Sederhana
+
+![Hasil Eksekusi](screenshots/3-transposisi.png)
+Transposisi Cipher adalah metode penyandian yang tidak mengubah huruf asli, tetapi mengubah urutan (posisi) huruf dalam pesan Artinya, huruf-huruf tetap sama, hanya diacak berdasarkan pola tertentu.
+
+Pada kode di atas, proses enkripsi dilakukan dengan menulis teks secara berkolom, kemudian membaca huruf-hurufnya per kolom dari atas ke bawah.
+
+Penjelasan enkripsi
+Fungsi transpose_encrypt() bekerja dengan :
+- Membuat sejumlah kolom sesuai dengan nilai key (misalnya 5).
+- Huruf plaintext ditulis berurutan ke bawah tiap kolom, lalu hasilnya dibaca dari kolom pertama ke terakhir.
+- Hasil akhirnya adalah susunan huruf yang berpindah posisi.
+
+Contoh  
+```
+Plaintext : T R A N S P O S I T I O N C I P H E R
+Key = 5
+```
+Teks ditulis dalam tabel 5 kolom :
+```
+T R A N S  
+P O S I T  
+I O N C I  
+P H E R
+```
+Kemudian dibaca kolom demi kolom menghasikan:
+Ciphertext = TPIPROOHASNENICRSTI 
+
+Penjelasan dekripsi 
+fungsi transpose_decrypt melakukan proses kebalikan yaitu :
+- Menentukan jumlah baris dan kolom
+- Mengembalikan urutan huruf ke posisi semula berdasarkan pola pembacaan kolom.
+- Hasil akhirnya kembali menjadi plaintext semula.
 
 ## 7. Jawaban Pertanyaan
 1. Kelemahan utama algoritma Caesar Chiper dan Vigenere Chiper
