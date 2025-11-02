@@ -69,13 +69,13 @@ print("Ciphertext:", enc)
 print("Decrypted :", dec)
 ```
 Hasil :
-```
+```python
 Plaintext : CLASSIC CIPHER
 Ciphertext: FODVVLF FLSKHU
 Decrypted : CLASSIC CIPHER
 ```
 Langkah 2 -- Implementasi Vigenere Cipher
-```
+```python
 def vigenere_encrypt(plaintext, key):
     result = []
     key = key.lower()
@@ -114,13 +114,13 @@ print("Ciphertext:", enc)
 print("Decrypted :", dec)
 ```
 Hasil :
-```
+```python
 Plaintext : KRIPTOGRAFI
 Ciphertext: UVGZXMQVYPM
 Decrypted : KRIPTOGRAFI
 ```
 Langkah 3 -- Implementasi Transposisi Sederhana
-```
+```python
 def transpose_encrypt(plaintext, key=5):
     ciphertext = [''] * key
     for col in range(key):
@@ -154,7 +154,7 @@ print("Ciphertext:", enc)
 print("Decrypted :", dec)
 ```
 Hasil :
-```
+```python
 Plaintext : TRANSPOSITIONCIPHER
 Ciphertext: TPIPROOHASNENICRSTI
 Decrypted : TRANSPOSITIONCIPHER
