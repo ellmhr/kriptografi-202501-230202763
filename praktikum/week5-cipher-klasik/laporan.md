@@ -37,7 +37,7 @@ Secara umum, ciper klasik berperan penting dalam sejarah kriptografi karena menj
 1. Membuat file `caesar.py` di folder `praktikum/week5-cipher-klasik/src/`.
 2. Membuat file `vigenere.py` di folder `praktikum/week5-cipher-klasik/src/`.
 3. Membuat file `transpose.py` di folder `praktikum/week5-cipher-klasik/src/`.
-4. Membuat folder `screenshots` di foler `praktikum/week5-cipher-klasik/src/`.
+4. Membuat folder `screenshots` di folder `praktikum/week5-cipher-klasik/src/`.
 5. Menyalin kode program dari panduan praktikum.
 6. Menjalankan program dengan perintah sesuai nama file.
 
@@ -67,6 +67,12 @@ dec = caesar_decrypt(enc, key)
 print("Plaintext :", msg)
 print("Ciphertext:", enc)
 print("Decrypted :", dec)
+```
+Hasil :
+```
+Plaintext : CLASSIC CIPHER
+Ciphertext: FODVVLF FLSKHU
+Decrypted : CLASSIC CIPHER
 ```
 Langkah 2 -- Implementasi Vigerere Cipher
 ```
@@ -107,6 +113,12 @@ print("Plaintext :", msg)
 print("Ciphertext:", enc)
 print("Decrypted :", dec)
 ```
+Hasil :
+```
+Plaintext : KRIPTOGRAFI
+Ciphertext: UVGZXMQVYPM
+Decrypted : KRIPTOGRAFI
+```
 Langkah 3 -- Implementasi Transposisi Sederhana
 ```
 def transpose_encrypt(plaintext, key=5):
@@ -141,7 +153,12 @@ print("Plaintext :", msg)
 print("Ciphertext:", enc)
 print("Decrypted :", dec)
 ```
-
+Hasil :
+```
+Plaintext : TRANSPOSITIONCIPHER
+Ciphertext: TPIPROOHASNENICRSTI
+Decrypted : TRANSPOSITIONCIPHER
+```
 ---
 
 ## 6. Hasil dan Pembahasan
