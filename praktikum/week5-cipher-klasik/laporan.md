@@ -161,26 +161,26 @@ Hasil eksekusi program Caesar Cipher:
 ## 7. Jawaban Pertanyaan
 1. Kelemahan utama algoritma Caesar Chiper dan Vigenere Chiper
    
-Kelemahan utama Caesar Chiper terletak pada jumlah kuncinya yang sangat terbatas, yaitu hanya 26 kemungkinan (untuk alfabet latin). Hal ini membuatnya sangat rentan terhadap serangan brute force, karena penyerang dapat mencoba semua kemungkinan pergeseran dengan cepat. selain itu, Caesar Chiper tidak mengubah pola frekuensi huruf, sehingga analisis frekuensi dapat dengan mudah mengenali huruf-huruf umum seperti "E", "T". atau "A" dalam bahasa Inggris, dan mengembalikan teks aslinya.
+  Kelemahan utama Caesar Chiper terletak pada jumlah kuncinya yang sangat terbatas, yaitu hanya 26 kemungkinan (untuk alfabet latin). Hal ini membuatnya sangat rentan terhadap serangan brute force, karena penyerang dapat mencoba semua kemungkinan pergeseran dengan cepat. selain itu, Caesar Chiper tidak mengubah pola frekuensi huruf, sehingga analisis frekuensi dapat dengan mudah mengenali huruf-huruf umum seperti "E", "T". atau "A" dalam bahasa Inggris, dan mengembalikan teks aslinya.
 
-Sementara itu, Vigenere Cipher awalnya dianggap lebih kuat karena menggunakan kunci berulang yang membuat pergeseran tiap huruf berbeda. Namum, kelemahannya muncul jika panjang kunci terlalu pendek atau pola kunci berulang, sebab pola tersebut dapat dideteksi menggunakan analisis Kasiski atau ui Friedman untuk menentukan panjang kunci. Setelah panjang kunci diketahui, cipher ini dapat dipecahkan dengan metde analisis frekuensi pada setiap bagian teks. Dengan demikian, meskipun lebih kompleks daripada Caesar Cipher, Vigenere Cipher tetap tidak aman terhadap serangan kriptanalisis modern.
+  Sementara itu, Vigenere Cipher awalnya dianggap lebih kuat karena menggunakan kunci berulang yang membuat pergeseran tiap huruf berbeda. Namum, kelemahannya muncul jika panjang kunci terlalu pendek atau pola kunci berulang, sebab pola tersebut dapat dideteksi menggunakan analisis Kasiski atau ui Friedman untuk menentukan panjang kunci. Setelah panjang kunci diketahui, cipher ini dapat dipecahkan dengan metde analisis frekuensi pada setiap bagian teks. Dengan demikian, meskipun lebih kompleks daripada Caesar Cipher, Vigenere Cipher tetap tidak aman terhadap serangan kriptanalisis modern.
 
 2. Alasan Cipher Klasik mudah diserang dengan analisis frekuensi
 
-Cipher klasik mudah diserang dengan analisis frekuensi karena setiap huruf pada teks asli (plaintext) diubah menjadi huruf lain secara tetap dan berulang sesuai aturan tertentu. Pola ini menyebabkan kemunculan huruf dalam ciphertext tetap mirip dengan pola bahasa aslinya.
+  Cipher klasik mudah diserang dengan analisis frekuensi karena setiap huruf pada teks asli (plaintext) diubah menjadi huruf lain secara tetap dan berulang sesuai aturan tertentu. Pola ini menyebabkan kemunculan huruf dalam ciphertext tetap mirip dengan pola bahasa aslinya.
 
-Misalnya, dalam bahasa Indonesia atau Inggris, huruf seperti "E" atau "A" muncul lebih sering dibandingakan huruf lain. Jika cipher tidak mengubah pola tersebut (seperti pada Caesar Cipher atau Vigenere Cipher dengan kunci pendek), maka penyerang dapat mencocokkan pola kemungkinan huruf terenkripsi dengan distribusi huruf bahasa alami untuk menebak huruf aslinya.
+  Misalnya, dalam bahasa Indonesia atau Inggris, huruf seperti "E" atau "A" muncul lebih sering dibandingakan huruf lain. Jika cipher tidak mengubah pola tersebut (seperti pada Caesar Cipher atau Vigenere Cipher dengan kunci pendek), maka penyerang dapat mencocokkan pola kemungkinan huruf terenkripsi dengan distribusi huruf bahasa alami untuk menebak huruf aslinya.
 
-Dengan kata lain, cipher klasik tidak cukup acak dan tidak menyembunyikan struktur statistik bahasa, sehingga sangat mudah dipecahkan menggunakan analisis frekuensi, bahkantanpa mengetahui kunci secara langsung.
+  Dengan kata lain, cipher klasik tidak cukup acak dan tidak menyembunyikan struktur statistik bahasa, sehingga sangat mudah dipecahkan menggunakan analisis frekuensi, bahkantanpa mengetahui kunci secara langsung.
 
 3. Bandingkan kelebihan dan kelemahan cipher subsitusi vs transposisi
   1. Ciper Substitusi
-    - Kelebihan:
-      - Konsepnya sederhana dan mudah diimplementasikan.
-      - Dapat memberikan hasil enkripsi depat karena hanya mengganti huruf dengan huruf lain..
-    - Kelemahan :
-      - Pola frekuensi huruf tetap terlihat, sehingga mudah diserang dengan analisis frekuensi.
-      - Tidak cukup kuat untuk digunakan dalam kriptografi modern.
+     - Kelebihan:
+       - Konsepnya sederhana dan mudah diimplementasikan.
+       - Dapat memberikan hasil enkripsi depat karena hanya mengganti huruf dengan huruf lain..
+     - Kelemahan :
+       - Pola frekuensi huruf tetap terlihat, sehingga mudah diserang dengan analisis frekuensi.
+       - Tidak cukup kuat untuk digunakan dalam kriptografi modern.
   2. Cipher Transposisi
      - Kelebihan :
        - Menyembunyikan pola teks asli dengan cara mengubah posisi huruf, bukan mengganti hurufnya.
