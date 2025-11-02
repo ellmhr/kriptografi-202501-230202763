@@ -45,7 +45,7 @@ Secara umum, ciper klasik berperan penting dalam sejarah kriptografi karena menj
 
 ## 5. Source Code
 Langkah 1 -- implementasi Caesar Cipher
-```
+```python
 def caesar_encrypt(plaintext, key):
     result = ""
     for char in plaintext:
