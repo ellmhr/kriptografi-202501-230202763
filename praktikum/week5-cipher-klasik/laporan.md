@@ -37,7 +37,7 @@ Secara umum, ciper klasik berperan penting dalam sejarah kriptografi karena menj
 1. Membuat file `caesar.py` di folder `praktikum/week5-cipher-klasik/src/`.
 2. Membuat file `vigenere.py` di folder `praktikum/week5-cipher-klasik/src/`.
 3. Membuat file `transpose.py` di folder `praktikum/week5-cipher-klasik/src/`.
-4. Membuat folder `screenshots` di folder `praktikum/week5-cipher-klasik/src/`.
+4. Membuat folder `screenshots` di folder `praktikum/week5-cipher-klasik/`.
 5. Menyalin kode program dari panduan praktikum.
 6. Menjalankan program dengan perintah sesuai nama file.
 
