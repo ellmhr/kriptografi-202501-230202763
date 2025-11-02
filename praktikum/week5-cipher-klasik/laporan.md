@@ -44,7 +44,7 @@ Secara umum, ciper klasik berperan penting dalam sejarah kriptografi karena menj
 ---
 
 ## 5. Source Code
-Langkah 1 -- implementasi Caesar Chiper
+Langkah 1 -- implementasi Caesar Cipher
 ```
 def caesar_encrypt(plaintext, key):
     result = ""
