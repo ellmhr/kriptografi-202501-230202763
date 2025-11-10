@@ -26,19 +26,22 @@ RSA (Rivest-Shamir_Adleman) adalah algoritma kriptografi asimetris yang mengguna
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
+- Python 3.x  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Library tambahan pycryptodome.
 
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+1. Membuat file `implementasi-des.py` di folder `praktikum/week6-cipher-modern/src/`.
+2. Membuat file `implementasi-aes.py` di folder `praktikum/week6-cipher-modern/src/`.
+3. Membuat file `implementasi-rsa.py` di folder `praktikum/week6-cipher-modern/src/`.
+4. Membuat folder `screenshots` di folder `praktikum/week6-cipher-modern/src/`.
+5. Menyalin kode program dari panduan praktikum.
+6. Menginstal library tambahan `pycryptodome`.
+7. Menjalankan program dengan perintah sesuai nama file.
+8. Menyimpan screenshots hasil eksekusi program ke dalam folder `screenshots`.
 
 ---
 
@@ -98,8 +101,6 @@ decipher_rsa = PKCS1_OAEP.new(private_key)
 decrypted = decipher_rsa.decrypt(ciphertext)
 print("Decrypted:", decrypted.decode())
 ```
-
-
 ---
 
 ## 6. Hasil dan Pembahasan
@@ -136,7 +137,7 @@ Proses enkripsi :
   ```python
   Ciphertext: b'/\xd9\x839\xe0\xdfm.q\x858\xc5\xb2\x7f\xbc\xeb\xbeV(e\x86\x99\xf9\xd0\x0e'
   ```
-  Bentuknya acak karena merupakan hasil proses matematis kompleks pada level bit.
+Bentuknya acak karena merupakan hasil proses matematis kompleks pada level bit.
 
 Proses dekripsi:
 - Cipher diinisialisasi ulang dengan kunci dan `nonce` yang sama.
@@ -151,6 +152,7 @@ Hasiil eksekusi langkah 3 -- Implementasi RSA
 RSA adalah algoritma kriptografi asimetris, artinya menggunaakn dua kunci berbeda:
 - Public key untuk enkripsi
 - Private key untuk dekripsi
+  
 Pada kode ini digunakan panjang kunci 2048 bit, yang cukup kuat untuk keamanan modern.
 
 Proses Enkripsi:
@@ -207,13 +209,10 @@ Proses pembangkitan kunci RSA secara sederhana:
    - Kunci publik = (e, n)
    - Kunci privat = (d, n).
 
-
-   
-)
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Berdasarkan percobaan, dapat disimpulkan bahwa DES, AES, dan RSA memiliki perbedaan dalam keamanan dan penggunaan kunci. DES sudah tidak aman karena panjang kuncinya pendek, sedangkan AES lebih kuat dan efisien dengan kunci hingga 256 bit. RSA menggunakan pasangan kunci publik dan privat, menjadikannya sangat aman untuk pertukaran data dan dalam sistem modern.
 
 ---
 
