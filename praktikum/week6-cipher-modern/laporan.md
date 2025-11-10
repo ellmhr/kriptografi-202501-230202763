@@ -110,6 +110,7 @@ DES (Data Encrypription Standard) adalah algoritma simetris yang bekerja pada bl
 Pada kode di atas, digunakan pustaka `Crypto.Chiper.DES` dengan mode ECB (Electronic Codebook), yang mengenkripsi setiap blok secara terpisah.
 
 Penjelasan enkripsi:
+
 Fungsi `cipher.encrypt(plaintext)` melakukan langkah berikut:
 - Kunci dihasilkan secara acak dengan `get_random_bytes(8)` yang menghasilkan 64-bit.
 - Plaintect berisi `b"ABCDEFGH"` yang panjangnya tepat 8 byte, sehingga tidak perlu padding.
@@ -120,6 +121,7 @@ Ciphertext: b'\xec7\xe5\t\xbe\xe5\x86\xb8'
 
 ```
 Penjelasan dekripsi:
+
 Fungsi `decipher.decrypt(ciphertext)` melakukan proses kebalikan dari enkripsi:
 - Menggunakan kunci yang sama seperti saat enkripsi.
 - DES menjalankan kembali 16 putaran transformasi secara terbalik.
@@ -175,7 +177,7 @@ RSA mengenkripsi data dengan dua kunci berbeda sehingga lebih aman untuk komunik
 ---
 
 ## 7. Jawaban Pertanyaan
-1. Apa perbedaan mendasar antara DES, AES< dan RSA dalam hal kunci dan keamanan?
+1. Apa perbedaan mendasar antara DES, AES, dan RSA dalam hal kunci dan keamanan?
 
 | Algoritma                              | Jenis Kriptografi | Panjang Kunci          | Keamanan                           | Keterangan                                                                                                            |
 | -------------------------------------- | ----------------- | ---------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
