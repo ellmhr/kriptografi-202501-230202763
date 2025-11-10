@@ -103,17 +103,72 @@ print("Decrypted:", decrypted.decode())
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil eksekusi langkah 1 -- Implementasi DES (opsional)
+![Hasil Eksekusi](screenshots/hasil_des.png)
+DES (Data Encrypription Standard) adalah algoritma simetris yang bekerja pada blok data 64-bit (8 byte) menggunakan kunci sepanjang 56-bit. Artinya kunci yang sama digunakanuntuk proses enkripsi dan dekripsi.
+Pada kode di atas, digunakan pustaka `Crypto.Chiper.DES` dengan mode ECB (Electronic Codebook), yang mengenkripsi setiap blok secara terpisah.
 
-Hasil eksekusi program Caesar Cipher:
+Penjelasan enkripsi:
+Fungsi `cipher.encrypt(plaintext)` melakukan langkah berikut:
+- Kunci dihasilkan secara acak dengan `get_random_bytes(8)` yang menghasilkan 64-bit.
+- Plaintect berisi `b"ABCDEFGH"` yang panjangnya tepat 8 byte, sehingga tidak perlu padding.
+- DES mempreoses plaintext melalui 16 putaran transformasi (substitusi dan permutasi) menggunakan subkunci yang berbeda di setiap putaran.
+- Hasil akhirnya adalah ciphertext biner acak yang tidak bisa dibaca manusia, misalnya:
+```
+Ciphertext: b'\xec7\xe5\t\xbe\xe5\x86\xb8'
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+```
+Penjelasan dekripsi:
+Fungsi `decipher.decrypt(ciphertext)` melakukan proses kebalikan dari enkripsi:
+- Menggunakan kunci yang sama seperti saat enkripsi.
+- DES menjalankan kembali 16 putaran transformasi secara terbalik.
+- Menghasilkan kembali teks asli `Decrypted: b'ABCDEFGH'`
+
+Hasil eksekusi langkah 2 -- Implementasi AES-128
+![Hasil Eksekusi](screenshots/hasil_aes.png)
+AES adalah algoritma kriptografi simetris modern yang bekerja dengan blok 128 bit dan mendukung panjang kunci 128, 192, atau 256 bit. Pada kode ini dugunakan kunci 128-bit dengan mode EAX, yaitu mode yang menyediakan enkripsi sekaligus verifikasi keaslian data.
+
+Proses enkripsi :
+- `get_random_bytes(16)` membuat kunci acak sepanjang 16 byte.
+- `AES.new(key, AES.MODE_EAX)` membuat objek cipher dengan nonce (angka acak unik).
+- `encrypt_and_digesti(plaintext)` menenkripsi data dan menghasilkan ciphertext serta tag autentikasi.
+  Hasil ciphertext berupa data biner acak seperti :
+  ```python
+  Ciphertext: b'/\xd9\x839\xe0\xdfm.q\x858\xc5\xb2\x7f\xbc\xeb\xbeV(e\x86\x99\xf9\xd0\x0e'
+  ```
+  Bentuknya acak karena merupakan hasil proses matematis kompleks pada level bit.
+
+Proses dekripsi:
+- Cipher diinisialisasi ulang dengan kunci dan `nonce` yang sama.
+- `decrypt(ciphertext)` mengembalikan teks asli:
+  ```
+  Decrypted: Modern Cipher AES Example
+
+  ```
+
+Hasiil eksekusi langkah 3 -- Implementasi RSA
+![Hasil Eksekusi](screenshots/hasil_rsa.png)
+RSA adalah algoritma kriptografi asimetris, artinya menggunaakn dua kunci berbeda:
+- Public key untuk enkripsi
+- Private key untuk dekripsi
+Pada kode ini digunakan panjang kunci 2048 bit, yang cukup kuat untuk keamanan modern.
+
+Proses Enkripsi:
+- `RSA.generate(2048)` membuat sepasang kunci (public dan private) secara acak.
+- `PKCS1_OAEP.new(public_key)` membuat objek cipher menggunakan public key dan skema padding OAEP agar hasil lebih aman.
+- `encrypt(plaintext)` mengenkripsi teks `"RSA Example"` menjadi ciphertext berupa deretan byte acak, contohnya :
+```python
+Ciphertext: b'\x17T@\xe2\x1be@\x9d\x91F\xa2s...'
+```
+Bentuk ciphertext ini tampak acak karena pesan telah diubah menjadi bilangan besar dan diproses dengan operasi matematika eksponensial pada kunci publik.
+
+Proses dekripsi:
+- `PKCS1_OAEP.new(private_key)` membuat objek dekripsi dengan private key.
+- `decrypt(ciphertext)` membalik proses enkripsi dan menghasilkan teks asli kemnbali:
+```
+Decrypted: RSA Example
+```
+RSA mengenkripsi data dengan dua kunci berbeda sehingga lebih aman untuk komunikasi publik. Hanya private key yang bisa membuka hasil enkripsi dari public key. Karena itu, RSA banyak digunakan dalams sistem keamanan digital seperti SSL/TLS, tanda tangan digital, dan pengiriman kunci rahasia.
 
 ---
 
@@ -174,9 +229,9 @@ Contoh:
 (Tuliskan bukti commit Git yang relevan.  
 Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week6-cipher-modern
+Author: Laeli Maharani <laelimaharani09@gmail.com>
+Date:   2025-10-11
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week6-cipher-modern: implementasi cipher modern (DES, AES, RSA) dan laporan)
 ```
