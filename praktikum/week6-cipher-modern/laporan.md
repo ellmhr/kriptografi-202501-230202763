@@ -118,13 +118,14 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …
+1. Apa perbedaan mendasar antara DES, AES< dan RSA dalam hal kunci dan keamanan?
+
 | Algoritma                              | Jenis Kriptografi | Panjang Kunci          | Keamanan                           | Keterangan                                                                                                            |
 | -------------------------------------- | ----------------- | ---------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | **DES (Data Encryption Standard)**     | Simetris          | 56-bit                 | Lemah (mudah diserang brute force) | Menggunakan satu kunci untuk enkripsi dan dekripsi. Kini sudah jarang digunakan karena kuncinya terlalu pendek.       |
 | **AES (Advanced Encryption Standard)** | Simetris          | 128, 192, atau 256-bit | Sangat kuat                        | Juga menggunakan satu kunci, namun lebih aman karena kunci lebih panjang dan proses enkripsi lebih kompleks.          |
 | **RSA (Rivest–Shamir–Adleman)**        | Asimetris         | 1024–4096 bit          | Sangat kuat                        | Menggunakan pasangan kunci publik dan privat. Aman karena didasarkan pada kesulitan faktorisasi bilangan prima besar. |
+
 
 - Pertanyaan 2: …  
 )
