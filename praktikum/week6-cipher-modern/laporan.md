@@ -127,7 +127,33 @@ Hasil eksekusi program Caesar Cipher:
 | **RSA (Rivest–Shamir–Adleman)**        | Asimetris         | 1024–4096 bit          | Sangat kuat                        | Menggunakan pasangan kunci publik dan privat. Aman karena didasarkan pada kesulitan faktorisasi bilangan prima besar. |
 
 
-- Pertanyaan 2: …  
+2. Mengapa AES lebih banyak digunakan dibanding DES di era modern?
+AES lebih banyak digunakan dibanding DES di era modern karena AES memiliki tingkat keamanan yang jauh lebih tinggi dan efisien yang lebih baik.
+Berikut penjelasannya:
+- Panjang kunci lebih besar - DES hanya menggunakan algoritma kunci 56-bit yang mudah diserang dengan brute force, sedangkan AES mendukung 128, 192, dan 256-bit, membuatnya hampir mustahil ditembus dengan serangan brute force modern.
+- Struktur algoritma lebih kuat - AES menggunakan operasi substitusi, permutasi, dan transformasi matriks yang kompleks, sehingga lebih tahan terhadap analisis kriptografi.
+- Performa tinggi - AES dioptimalkan untuk pereangkat keras maupun perangkat lunak, sehingga cepat digunakan di berbagai sistem modern.
+- Standar keamanan internasional - AES ditetapkan oleh NISt sebagai standar enkripsi resmi menggantikan DES, dan digunakn secara luas di pemerintahan, industri, serta komunikasi digital.
+
+3. Mengapa RSA diketegorikan sebagai algoritma asimetris, dan bagaimana proses pembangkitan kuncinya?
+RSA dikategorikan sebagai algoritam asimetris karena menggunakan dua kunci yang berbeda, yaitu:
+- Kunci publik untuk enkripsi (dapat dibagikan ke siapa saja).
+- Kunci privat untuk dekripsi (hanya diketahui oleh pemiliknya).
+Berbeda dengan algoritma simeetris (seperti AES dan DES) yang hanya memakai satu kunci yang sama untuk enkripsi dan dekripsi, RSA memisahkan kedua fungsi tersebut agar lebih aman dalam komunikasi publik.
+
+Proses pembangkitan kunci RSA secara sederhana:
+1. Pilih dua bilangan prima besar, misalnya p dan q.
+2. Hitung n = p x q, yang akan menjadi bagian dari kunci publik dan privat.
+3. Hitung φ(n) = (p - 1)(q - 1).
+4. Pilih bilangan e yang relatif prima terhadap φ(n) (biasanya nilai kecil seperti 65537)
+5. Hitung d, yaitu invers modular dari e terhadap φ(n):
+   d x e = 1(modφ(n)).
+6. Hasilnya :
+   - Kunci publik = (e, n)
+   - Kunci privat = (d, n).
+
+
+   
 )
 ---
 
