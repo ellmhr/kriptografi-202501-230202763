@@ -1,20 +1,25 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 9 
+Topik: Digital Signature (RSA/DSA)  
+Nama: laeli Maharani  
+NIM: 230202763  
+Kelas: 5IKRB  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Mengimplemntasikan tanda tangan digital menggunakan algoritma RSA/DSA.
+2. Memverifikasi keaslian tanda tangan digital.
+3. Menjelsakan manfaat tanda tangan digital dalam otentikasi pesan dan itegritas data.
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Digital SIgnature atau tanda tangan digital adalah mekanisme kriptografi yang digunakan untuk memastikan keaslian, integritas dan non-repudiation dari sebuah pesan atau dokumen elektronik. Berbeda dari enkripsi yang bertujuan merahasiakan data, tanda tangan digital fokus pada pembuktian bahwa suatu pesan benar-benar dikirim oleh pihak yang saha dan tidak mengalami perubahan selama proses transmisi. Mekanisme ini selalu menggunakan fungsi hash untuk menghasilkan representasi unik dari pesan sebelum ditandatangani.
+
+Pada RSA Digital SIgnature, prosesnya dilakukan dengan "membalik" mekanisme enkripsi RSA. Pengirim membuat signature dengan cara mengenkripsi hash pesan menggunakan privarte key, lalu penerima memverifikasinya menggunakan private key, lalu penerima memverifikasinya menggunakan public key. Jika hasil verifikasi sesuai dengan hash pesan, maka penerima dapat memastikan bahwa pesan tersebut asli dan tidak dimodifikasi. Keamanan RSA Signature terletak pada kesulitan memfaktorkan bilangan besar, sehingga dapat sangat sulit dipalsukan tanpa private key.
+
+Sedangkan DSA (Digital Signature Algorithm) bekerja berdasarkan Discrete Logarithm Problem dan menghasilkan tanda tangan berupa pasangan nilai (r,s) yang dihitung menggunakan private key dan nilai acak k. Penerima kemudian memverifikasi signature menggunakan public key dan formula DSA. Baik RSA maupun DSA memberikan jaminan kuat terhadap integritas dan autentikasi pesan, menjadikan digital signature sebagai fondasi penting dalam keamanan modern, seperti pada SSL/TLS, e-commerce, dan distribusi perangkat lunak.
 
 ---
 
