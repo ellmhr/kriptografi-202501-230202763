@@ -1,7 +1,7 @@
 # Laporan Praktikum Kriptografi
 Minggu ke-: 9 
 Topik: Digital Signature (RSA/DSA)  
-Nama: laeli Maharani  
+Nama: Laeli Maharani  
 NIM: 230202763  
 Kelas: 5IKRB  
 
@@ -32,11 +32,11 @@ Sedangkan DSA (Digital Signature Algorithm) bekerja berdasarkan Discrete Logarit
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `signature.py` di folder `praktikum/week9-digital-signature/src/`.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menjalankan program dengan perintah sesuai nama file.
+4. Membuat folder `screenshots` di folder `praktikum/week9-digital-signature/`.
+5. Menempelkan hasil eksekusi program ke folder `screenshots`.
 
 ---
 
@@ -93,7 +93,6 @@ Tanda tangan digital signature digunakan untuk membuktikan keaslian dan integirt
 Pada praktikum ini, kode dibagi menjadi 3 langkah yaitu : membuat tanda tangan, memverifikasi, dan menguji perubahan pesan.
 
 Langkah 1 -- Generate Key & Buat Tanda Tangan
-
 Pada bagian ini :
 - Program menghasilkan pasangan kunci RSA: private key dan public key.
 - Pesan asli `(Hello, ini pesan penting)` dihitung hash-nya menggunakan SHA-256.
@@ -105,7 +104,6 @@ Signature: c62bef54d53958dfda079f34...
 Tanda tangan ini adalah hasil operasi matematika RSA, pada hash, sehingga bentuknya tampah acak.
 
 Langkah 2 -- Verifikasi Tanda Tangan
-
 Pada tahap ini:
 - Program menggunakan public key untuk memverifikasi apakah signature cocok dengan hash pesan asli.
 - Jika signature valid, program menampilkan:
@@ -115,7 +113,6 @@ Verifikasi berhasil: tanda tangan valid.
 Karena signature dibuat dari pesan yang sama dan kunci pasangannya benar, verifikasi berjalan sukses.
 
 Langkah 3 - Uji Modifikasi Pesan
-
 Pada tahap ini diuji apakah tanda tangan tetap valid jika pesannya diubah. 
 - Pesan dibuah menjadi : `"Hello, ini pesan palsu"`
 - Hash baru dibuat (`h_fake`).
@@ -149,6 +146,7 @@ Certificate Authority (CA) berperan sebagai pihakketika terpercaya yagn memvreri
 
 ## 8. Kesimpulan
 Berdasarkan praktikum digital signature RSA, saya menyimpulkan bahwa tanda tangan digital hanya akan valid jika pesan yang diverifikasi identik dengan pesan asli yang ditandatangani. Perubahan sekecil apapun pada isi pesan langsung membuat verifikasi gagal, sehingga integritas dan keaslian data benar-benar terjamin. Selain itu, penggunaan pasangan private key-public key memastikan bahwa hanya pengirim sah yang bisa membuat tanda tangan, sementara siapa pun dapat memverifikasinya.
+
 ---
 
 ## 9. Daftar Pustaka
@@ -163,9 +161,9 @@ Contoh:
 (Tuliskan bukti commit Git yang relevan.  
 Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week9-digital-signature
+Author: Laeli Maharani <laelimaharani09@gmail.com>
+Date:   2025-12-07
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week9-digital-signature: implementasi digital signature (RSA/DSA) dan laporan
 ```
