@@ -84,17 +84,49 @@ except (ValueError, TypeError):
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil eksekusi program digital signature:
 
-Hasil eksekusi program Caesar Cipher:
+![Hasil Eksekusi](screenshots/hasil_signature.png)
+Tanda tangan digital signature digunakan untuk membuktikan keaslian dan integirtas pesan. Prosesnya melibatkan dua operasi utama yaitu:
+- Signing (menandatangani pesan) dengan private key.
+- Verifikasi dengan public key.
+Pada praktikum ini, kode dibagi menjadi 3 langkah yaitu : membuat tanda tangan, memverifikasi, dan menguji perubahan pesan.
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Langkah 1 -- Generate Key & Buat Tanda Tangan
+
+Pada bagian ini :
+- Program menghasilkan pasangan kunci RSA: private key dan public key.
+- Pesan asli `(Hello, ini pesan penting)` dihitung hash-nya menggunakan SHA-256.
+- Hash tersebut ditandatangani menggunakan private key dengan algoritma PKCS#1 vl.5.
+- Hasilnya adalah signature berupa deretan angka heksadesimal acak seperti :
+```
+Signature: c62bef54d53958dfda079f34...
+```
+Tanda tangan ini adalah hasil operasi matematika RSA, pada hash, sehingga bentuknya tampah acak.
+
+Langkah 2 -- Verifikasi Tanda Tangan
+
+Pada tahap ini:
+- Program menggunakan public key untuk memverifikasi apakah signature cocok dengan hash pesan asli.
+- Jika signature valid, program menampilkan:
+```python
+Verifikasi berhasil: tanda tangan valid.
+```
+Karena signature dibuat dari pesan yang sama dan kunci pasangannya benar, verifikasi berjalan sukses.
+
+Langkah 3 - Uji Modifikasi Pesan
+
+Pada tahap ini diuji apakah tanda tangan tetap valid jika pesannya diubah. 
+- Pesan dibuah menjadi : `"Hello, ini pesan palsu"`
+- Hash baru dibuat (`h_fake`).
+- Program mencoba memverifikasi signature lama terhadap hash pesan palsu.
+Karena isi pesan berubah, hash juga beruabh, sehingga tanda tangan tidak cocok dan output menjadi :
+```python
+Verifikasi gagal: tanda tangan tidak cocok dengan pesan.
+```
+Ini menunjukkan bahwa tanda tangan digital menjamin integritas meskipun hanya satu karakter berubah, verifikasi langsung gagal.
+
+Melalui praktikum ini, saya memahami bahwa tanda tangan digital RSA valid untuk pesan yang benar-benar sama dengan yang ditandatangani. Perubahan kecil pada pesan menyebabkan verifikasi gagal, sehingga integritas dan keaslian pesan dapat dipastikan sepenuhnya.
 
 ---
 
@@ -116,8 +148,7 @@ Certificate Authority (CA) berperan sebagai pihakketika terpercaya yagn memvreri
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
-
+Berdasarkan praktikum digital signature RSA, saya menyimpulkan bahwa tanda tangan digital hanya akan valid jika pesan yang diverifikasi identik dengan pesan asli yang ditandatangani. Perubahan sekecil apapun pada isi pesan langsung membuat verifikasi gagal, sehingga integritas dan keaslian data benar-benar terjamin. Selain itu, penggunaan pasangan private key-public key memastikan bahwa hanya pengirim sah yang bisa membuat tanda tangan, sementara siapa pun dapat memverifikasinya.
 ---
 
 ## 9. Daftar Pustaka
