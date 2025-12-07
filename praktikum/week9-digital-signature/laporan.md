@@ -158,8 +158,6 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
 commit week9-digital-signature
 Author: Laeli Maharani <laelimaharani09@gmail.com>
