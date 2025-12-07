@@ -100,14 +100,17 @@ Hasil eksekusi program Caesar Cipher:
 
 ## 7. Jawaban Pertanyaan
 Pertanyaan 1: Perbedaan utama antara enkripsi RSA dan tanda tangan digital RSA
+
 Perbedaan utamanya terletak pada arah penggunaan kunci.
 - Enkripsi RSA: Menggunakan public key untuk mengenkripsi dan private key untuk mendekripsi, tujuannya menjaga kerahasiaan pesan.
 - Tanda tangan digital RSA: Menggunakan private key untuk menandatangani dan public key untuk memverifikasi tanda tangan, tujuannya memastikan keaslian (authenticity) dan integritas pesan, bukan kerahasiaan.
 
 Pertanyaan 2: Mengapa tanda tangan digital menjamin integritas dan otentikasi pesan?
+
 Tanda tangan digital menggunakan hash dari pesan yang ditandatangani dengan private key. Jika pesan diubah sedikit saja, hash tidak akan cocok lagi sehingga integritas terjamin. Karena hanya pemilik asli yang memiliki private key, maka siapa pun yang berhasil memverifikasi tanda tangan menggunakan public key akan yakin bahwa pesan tersebut benar berasal dari pengirim yang sah, sehingga memberikan otentikasi.
 
 Pertanyaan 3: Peran Certificate Authority (CA) dalam sistem tanda tangan digital modern
+
 Certificate Authority (CA) berperan sebagai pihakketika terpercaya yagn memvrerifikasi identitas pemilik public key dan menerbitkan sertifikat digital. Dengan adanya CA, public key dapat dipercaya karena sudah divalidasi secara resmi, sehingga mencegah pemalsuan identitas dan serangan man-in-the-middle.
 
 ---
