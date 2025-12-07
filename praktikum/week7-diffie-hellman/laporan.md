@@ -24,7 +24,7 @@ Keamanan Diffie-Hellman bergantung pada kesulitan masalah Discrete Logarithm Pro
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
+- Python 3.x  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
 - Library tambahan (misalnya pycryptodome, jika diperlukan)  )
@@ -32,11 +32,10 @@ Keamanan Diffie-Hellman bergantung pada kesulitan masalah Discrete Logarithm Pro
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `diffie_helman.py` di folder `praktikum/week7-diffie-helman/src/`.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menjalankan program dengan perintah sesuai nama file.
+4. Membuat folde `screenshots` di folder `praktikum/week7-diffie-helman/`.
 
 ---
 
@@ -68,18 +67,47 @@ print("Kunci bersama Bob   :", shared_secret_B)
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil eksekusi program simulasi diffie helman
 
-Hasil eksekusi program Caesar Cipher:
+![Hasil Eksekusi](screenshots/hasil-diffie-helman.png)
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Diffie-Hellman adalah protokol pertukaran kunci yang memungkinkan dua pihak pembentukan kunci rahasia bersama melalui jaringan publik tanpa pernah mengirimkan kunci tersebut secara langsung. Protokol ini bekerja berdasarkan konsep eksponensial modular yang aman karena sulitnya menyelesaikan discrete logarithm problem.
 
+Pada kode di atas, program menggunakan nilai publik p (bilangan prima) dan g (generator) yang diketahui secara seluruh pihak. Alice dan Bob kemudian membuat private key masing-masing secara acak, lalu menghitung public key untuk saling ditukar. Setelah bertukar public key, masing-masing menghitung shared secret dengan operasi pangkat modulo.
+
+Penjelasan source code :
+1. Menentukan parameter kubik
+````
+p = 23 # bilangan prima
+g = 5 # generator
+````
+Nilai ini bersifat publik dan boleh diketahui siapa saja.
+2. Membuat Private Key
+````
+a = random.randint(1, p) # secret Aloce
+b = random.randint(1, p) # secret Bob
+````
+- a = private key Alice
+- b = private key Bob
+Keduanya bersifat rahasia.
+3. Menghasilkan Public Key
+````
+A = pow(g, a, p)
+B = pow(g, b, p)
+````
+Rumusnya : A = g^a mod [, B = g^b mod p
+Nilai A dan B boleh dipertukarkan secara publik.
+4. Menghitung shared secret
+````
+shared_secret_A = pow(B, a, p)
+shared_secret_B = pow(A, b, p)
+````
+Hasil output :
+```python
+Kunci bersama Alice : 5
+Kunci bersama Bob   : 5
+```
+Kode tersebut berhasil menjalankan protokol Diffie-Hellman, di mana Alice dan Bob memiki privte key berbeda, namun tetap menghasilkan kunci rahasia identik tanpa pernah mengirimkan kunci tersebut secara langsung. Kunci bersama yang muncul (misalnya 5) merupakan hasil operasi eksponensial modular pada kedua sisi yang matematisnya selalu memberikan hasil sama.
 ---
 
 ## 7. Jawaban Pertanyaan
@@ -101,7 +129,7 @@ Selain itu, Diffie-Hellman murni juga tidak menyediakan autentikasi dan tidak me
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Hasil program menunjukkan bahwa meskipun saya memberikan private key yang berbeda untuk Alice dan Bob, keduanya tetap menghasilkan kunci bersama yang sama. Ini membuktikan bahwa algoritma Diffie-Hellman pada kode tersebtu bekerja dengan benar, karena kunci rahasia dapat terbentuk tanpa perlu mengirimkannya secara langsung. Dengan demikian, saya dapat melihat bagaimanan kedua pihak dapat membangun kunci bersama secara aman meskipun berkomunikasi melalui saluran publik.
 
 ---
 
@@ -114,12 +142,11 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+```
+commit week7-diffie-hellman
+Author: Laeli Maharani <laelimaharani09@gmail.com>
+Date:   2025-12-07
+
+    week7_diffie-helman: implementasi key exchange
 ```
