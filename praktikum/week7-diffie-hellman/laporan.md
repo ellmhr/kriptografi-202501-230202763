@@ -69,7 +69,7 @@ print("Kunci bersama Bob   :", shared_secret_B)
 ## 6. Hasil dan Pembahasan
 Hasil eksekusi program simulasi diffie helman
 
-![Hasil Eksekusi](screenshots/hasil-diffie-helman.png)
+![Hasil Eksekusi](screenshots/hasil_diffie_helman.png)
 
 Diffie-Hellman adalah protokol pertukaran kunci yang memungkinkan dua pihak pembentukan kunci rahasia bersama melalui jaringan publik tanpa pernah mengirimkan kunci tersebut secara langsung. Protokol ini bekerja berdasarkan konsep eksponensial modular yang aman karena sulitnya menyelesaikan discrete logarithm problem.
 
@@ -81,7 +81,7 @@ Penjelasan source code :
 p = 23 # bilangan prima
 g = 5 # generator
 ````
-Nilai ini bersifat publik dan boleh diketahui siapa saja.
+   Nilai ini bersifat publik dan boleh diketahui siapa saja.
 2. Membuat Private Key
 ````
 a = random.randint(1, p) # secret Aloce
@@ -89,14 +89,14 @@ b = random.randint(1, p) # secret Bob
 ````
 - a = private key Alice
 - b = private key Bob
-Keduanya bersifat rahasia.
+   Keduanya bersifat rahasia.
 3. Menghasilkan Public Key
 ````
 A = pow(g, a, p)
 B = pow(g, b, p)
 ````
 Rumusnya : A = g^a mod [, B = g^b mod p
-Nilai A dan B boleh dipertukarkan secara publik.
+   Nilai A dan B boleh dipertukarkan secara publik.
 4. Menghitung shared secret
 ````
 shared_secret_A = pow(B, a, p)
@@ -108,6 +108,7 @@ Kunci bersama Alice : 5
 Kunci bersama Bob   : 5
 ```
 Kode tersebut berhasil menjalankan protokol Diffie-Hellman, di mana Alice dan Bob memiki privte key berbeda, namun tetap menghasilkan kunci rahasia identik tanpa pernah mengirimkan kunci tersebut secara langsung. Kunci bersama yang muncul (misalnya 5) merupakan hasil operasi eksponensial modular pada kedua sisi yang matematisnya selalu memberikan hasil sama.
+
 ---
 
 ## 7. Jawaban Pertanyaan
