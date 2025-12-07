@@ -24,7 +24,7 @@ Sedangkan DSA (Digital Signature Algorithm) bekerja berdasarkan Discrete Logarit
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
+- Python 3.x  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
 - Library tambahan (misalnya pycryptodome, jika diperlukan)  )
@@ -41,15 +41,45 @@ Contoh format:
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
-
+Langkah 1 -- Gerakan Key dan Buat Tanda Tangan
 ```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
+from Crypto.PublicKey import RSA
+from Crypto.Signature import pkcs1_15
+from Crypto.Hash import SHA256
+
+# Generate pasangan kunci RSA
+key = RSA.generate(2048)
+private_key = key
+public_key = key.publickey()
+
+# Pesan yang akan ditandatangani
+message = b"Hello, ini pesan penting."
+h = SHA256.new(message)
+
+# Buat tanda tangan dengan private key
+signature = pkcs1_15.new(private_key).sign(h)
+print("Signature:", signature.hex())
 ```
-)
+Lamgkah 2 -- Verifikasi Tanda Tangan
+```python
+try:
+    pkcs1_15.new(public_key).verify(h, signature)
+    print("Verifikasi berhasil: tanda tangan valid.")
+except (ValueError, TypeError):
+    print("Verifikasi gagal: tanda tangan tidak valid.")
+```
+Langkah 3 -- Uji Modifikasi Pesan
+```python
+# Modifikasi pesan
+fake_message = b"Hello, ini pesan palsu."
+h_fake = SHA256.new(fake_message)
+
+try:
+    pkcs1_15.new(public_key).verify(h_fake, signature)
+    print("Verifikasi berhasil (seharusnya gagal).")
+except (ValueError, TypeError):
+    print("Verifikasi gagal: tanda tangan tidak cocok dengan pesan.")
+```
 
 ---
 
@@ -69,10 +99,17 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+Pertanyaan 1: Perbedaan utama antara enkripsi RSA dan tanda tangan digital RSA
+Perbedaan utamanya terletak pada arah penggunaan kunci.
+- Enkripsi RSA: Menggunakan public key untuk mengenkripsi dan private key untuk mendekripsi, tujuannya menjaga kerahasiaan pesan.
+- Tanda tangan digital RSA: Menggunakan private key untuk menandatangani dan public key untuk memverifikasi tanda tangan, tujuannya memastikan keaslian (authenticity) dan integritas pesan, bukan kerahasiaan.
+
+Pertanyaan 2: Mengapa tanda tangan digital menjamin integritas dan otentikasi pesan?
+Tanda tangan digital menggunakan hash dari pesan yang ditandatangani dengan private key. Jika pesan diubah sedikit saja, hash tidak akan cocok lagi sehingga integritas terjamin. Karena hanya pemilik asli yang memiliki private key, maka siapa pun yang berhasil memverifikasi tanda tangan menggunakan public key akan yakin bahwa pesan tersebut benar berasal dari pengirim yang sah, sehingga memberikan otentikasi.
+
+Pertanyaan 3: Peran Certificate Authority (CA) dalam sistem tanda tangan digital modern
+Certificate Authority (CA) berperan sebagai pihakketika terpercaya yagn memvrerifikasi identitas pemilik public key dan menerbitkan sertifikat digital. Dengan adanya CA, public key dapat dipercaya karena sudah divalidasi secara resmi, sehingga mencegah pemalsuan identitas dan serangan man-in-the-middle.
+
 ---
 
 ## 8. Kesimpulan
