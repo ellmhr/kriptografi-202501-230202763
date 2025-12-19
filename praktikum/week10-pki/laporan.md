@@ -77,19 +77,42 @@ with open("cert.pem", "wb") as f:
 
 print("Sertifikat digital berhasil dibuat: cert.pem")
 ```
-)
+
+Langkah 2 --Memverifikasi sertifikat
+Menggunakan public key untuk memverifiksi tanda tangan sertifikat.
+```python
+public_key = key.public_key()
+
+try:
+    public_key.verify(
+        cert.signature,
+        cert.tbs_certificate_bytes,
+        padding.PKCS1v15(),
+        cert.signature_hash_algorithm,
+    )
+    print("Verifikasi sertifikat berhasil: tanda tangan valid.")
+except Exception:
+    print("Verifikasi sertifikat gagal.")
+```
+Peran Certificate Authority (CA) dalam sistem PKI berperan sebagai pihak terpercaya yang menandatangani sertifikat digital. Tanda tangan CA memungkinkan pihak lain memverifikasi keaslian sertifikat menggunakan public key CA, sehingga identitas pemilik sertifikat dapat dipercaya.
+
+Langkah 3 --Analisis PKI
+- Bagaimana browser memverifikasi sertifikat HTTPS?
+  Browser memverifikasi sertifikat HTTPS dengan memeriksa tanda tangan digital sertifikat menggunakan public key CA yang sudah dipercaya dan tersimpan di sistem browser. Jika tanda tangan valid dan sertifikat masih berlaku, koneksi dianggap aman.
+
+- Apa yang terjadi jika CA palsu menerbitkan sertifikat?
+Jika CA palsu menerbitkan sertifikat, browser tidak akan mempercayainya karena publik key CA tersbut tidak ada dalam daftar trusted CA. Akibatnya, browser akan menampilkan peringatan keamanan kepada pengguna.
+
+- Mengapa PKI penting dalam komuniksi aman?
+PKI penting karena memastikan autentiksi identitas, menjaga integritas data, dan memungkinkan pertukaran informasi secara aman, terutama pada transaksi online seperti perbankan dan e-commerce.
 
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
 
 Hasil eksekusi program Caesar Cipher:
 
-![Hasil Eksekusi](screenshots/output.png)
+![Hasil Eksekusi](screenshots/hasil_pki.png)
 ![Hasil Input](screenshots/input.png)
 ![Hasil Output](screenshots/output.png)
 )
@@ -122,12 +145,10 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week10-pki
+Author: Laeli Maharani <laelimaharani09@gmail.com>
+Date:   2025-12-19
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week10_pki: Public Key Infrastrukture (PKI & Certificate Authority dan laporan )
 ```
