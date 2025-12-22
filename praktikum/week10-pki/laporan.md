@@ -27,16 +27,17 @@ PKI dan CA banyak digunakan pada sistem keamanan modern seperti HTTPS, tanda tan
 - Python 3.x  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Library tambahan cryptography.
 
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `pki_cert.py` di folder `praktikum/week10-pki/src/`.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menginstal library `cryptography`.
+4. Menjalankan program dengan perintah sesuai nama file.
+5. Membuat folder `screenshots` di folder `praktikum/week10-pki/src.`.
+6. Menempel hasil eksekusi program ke dalam folder `screenshots`.
 
 ---
 
@@ -109,13 +110,14 @@ PKI penting karena memastikan autentiksi identitas, menjaga integritas data, dan
 ---
 
 ## 6. Hasil dan Pembahasan
-
 Hasil eksekusi program Caesar Cipher:
-
 ![Hasil Eksekusi](screenshots/hasil_pki.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+
+Berdasarkan hasil eksekusi program, sistem berhasil menghasilkan sertifikat digital self-signed menggunakan algoritma kriptografi RSA dengan panjang kunci 2048 bit. Sertifikat tersebut ditandatangani menggunakan private key dan disimpan dalam format PEM (`cert.pem`).
+
+Selanjutnya, dilakukan proses verifikasi tanda tangan sertifikat menggunakan public key yang bersesuaian. Hasil verifikasi menunjukkan bahwa tanda tangan digital pada sertifikat valid, yang berarti sertifikat benar-benar dibuat dan ditandatangani oleh pemilik private key yang sesuai, serta tidak mengalami perubahan data sejak ditandatangani.
+
+Hasil ini membuktikan bahwa mekanisme Publik Key Infrastructure (PKI) bekerja dengan baik, dimana keaslian dari integritas sertifikat dapat dijamin melalui proses tanda tangan digital dan verifikasi menggunakan pasangankunci publik dan privat.
 
 ---
 
@@ -132,7 +134,7 @@ PKI mencegah serangan MITM dalam komunikasi TLS/HTTPS ditandatangani oleh CA ter
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Berdasarkan percobaan yang dilakukan, program berhasil membuat sertifikat digital self-signed menggunakan algoritma RSA dan menandatanganinya dengan private key. Proses verifikasi menggunakan public key menunjukkan bahwa tanda tangan sertifikat valid, sehingga keaslian dan integritas sertifikat dapat dipastikan. Percobaan ini membuktikan cara kerja dasar PKI dalam menjamin keamanan dan kepercayaan pada sertifikat digital.
 
 ---
 
