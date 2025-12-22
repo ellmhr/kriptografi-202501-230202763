@@ -110,7 +110,7 @@ PKI penting karena memastikan autentiksi identitas, menjaga integritas data, dan
 ---
 
 ## 6. Hasil dan Pembahasan
-Hasil eksekusi program Caesar Cipher:
+Hasil eksekusi program:
 ![Hasil Eksekusi](screenshots/hasil_pki.png)
 
 Berdasarkan hasil eksekusi program, sistem berhasil menghasilkan sertifikat digital self-signed menggunakan algoritma kriptografi RSA dengan panjang kunci 2048 bit. Sertifikat tersebut ditandatangani menggunakan private key dan disimpan dalam format PEM (`cert.pem`).
