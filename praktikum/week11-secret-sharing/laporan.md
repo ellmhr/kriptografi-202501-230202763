@@ -10,7 +10,7 @@ Kelas: 5IKRB
 ## 1. Tujuan
 1. Menjelaskan konsep Shamir Secret Sharing (SSS).
 2. Melakukan simulasi pembagian rahasia ke beberapa pihak menggunakan skema SSS.
-3. Menganalisis keamanan skema distribusi rahasia.
+3. Menganalisis keamanan skema distribusi rahasia..
 
 ---
 
