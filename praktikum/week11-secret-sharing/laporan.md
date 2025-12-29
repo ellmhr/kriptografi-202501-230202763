@@ -32,11 +32,11 @@ Shamir's Secret Sharing banyak digunakan pada sistem keamanan modern, seperti ma
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `secret_sharing.py` di folder `praktikum/week11-secret_sharing/src/`.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menjalankan program.
+4. Membuat folder `screenshots` di folder `praktikum/week11-secret_sharing/src/`.
+5. Menempel hasil eksekusi program ke folder `screenshots`.
 
 ---
 
@@ -58,21 +58,70 @@ recovered = SecretSharer.recover_secret(shares[:3])
 print("Recovered secret:", recovered)
 ```
 
+Langkah 2 -- Simulasi Manual (Tanpa Library)
+```python
+import random
 
+# Parameter
+p = 2089            # bilangan prima (harus > secret)
+secret = 1234       # rahasia (a0)
+k = 3               # threshold
+n = 5               # jumlah share
+
+# Bangun polinomial f(x) = a0 + a1*x + a2*x^2 mod p
+coefficients = [secret] + [random.randint(1, p-1) for _ in range(k-1)]
+
+def polynomial(x, coeffs, p):
+    result = 0
+    for i in range(len(coeffs)):
+        result = (result + coeffs[i] * pow(x, i)) % p
+    return result
+
+# Membuat shares (x, f(x))
+shares = []
+for x in range(1, n+1):
+    y = polynomial(x, coefficients, p)
+    shares.append((x, y))
+
+print("Shares:")
+for s in shares:
+    print(s)
+
+# Lagrange Interpolation untuk rekonstruksi secret
+def lagrange_interpolation(x, shares, p):
+    total = 0
+    for i, (xi, yi) in enumerate(shares):
+        prod = yi
+        for j, (xj, _) in enumerate(shares):
+            if i != j:
+                prod *= (x - xj) * pow(xi - xj, -1, p)
+                prod %= p
+        total += prod
+    return total % p
+
+# Rekonstruksi secret menggunakan k shares
+recovered_secret = lagrange_interpolation(0, shares[:k], p)
+print("\nRecovered Secret:", recovered_secret)
+```
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil eksekusi program: 
+Langkah 2 -- Aimulasi Manual (Tanpa Library)
+![Hasil Eksekusi](screenshots/hasil_secret_sharing.png)
 
-Hasil eksekusi program Caesar Cipher:
+Pada tahap ini, Shamir Secret Sharing diimplementasikan secara manual untuk memahami konsep matematis di balik pembagian rahasia. Proses diawali dengan memilih sebuah bilangan prima p yang cukup besar sebagai modulus, sehingga seluruh perhitungan dilakukan dalam aritmetika modulo untuk menjaga keamanan data.
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Selanjutnya dibangun sebuah polinomial berderajat k -1 dengan bentuk f(x) = a0 + a1x +...+ak-1x^k-1 (mod p). Dimana a0 merupakan nilai rahasia (secret) dan koefisien lainnya dipilih secara acak. Polinomial ini menjadi dasar pembentukan share.
+
+Setiap share dibentuk sebagai pasangan nilai (x,f(x)) dengan nilai x yang berbeda. Share-share ini kemudian dibagikan kepada peserta. Untuk merekontruksi rahasia, digunakan interpolasi lagrange dengan minimal k buah share. Melalui proses ini, nilai polinomial pada x=0 dapat dihitung kembali sehingga rahasia asli berhasil diperoleh.
+
+Langkah 3 -- Diskusi Shamir Secret Sharing
+1. Mengapa skema (k,n) tetap aman karena kurang dari k share tidak memberikan informasi apa pun tentang secret. Secara matematis, banyak polinomial berbeda dapat dibentuk dari jumlah share yang kurang dari treshold, sehingga penyerang tidak dapat menebak nilai rahasia meskipun beberapa share bocor.
+
+2. Risiko jika treshold k terlalu kecil atau terlalu besar. Jika k terlalu kecil, keamanan menurun karena sedikit share sudah cukup untuk merekontruksi secret, sehinga risiko kebocoran meningkat. Sebaliknya, jika k terlalu besar, sistem menjadi kurang fleksibel, karena kehilangan beberapa share saja dapat membuat secret tidak dapat dipulihkan.
+
+3. Penerapan Shamir Secret Sharing di dunia nyata banyak digunakan dalam manajemen kunci cryptocurrency, di mana private key dibagi ke beberapa pihak agar tidak tersimpan di suatu tempat. Selain itu, SSS juga ditetapkan pada mekanisme recovery password dan pengamanan kunci master perusahaan, sehingga tidak ada satu pihak yang memegang kendali penuh atas rahasia penting.
 
 ---
 
@@ -95,7 +144,7 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Praktikum ini menunjukkan bahwa Shamir Secret Sharing mampu membagi sebuah rahasia menjadi beberapa bagian (shares) sehingga rahasia hanya dapat direkonstruksi jika jumlah share memenuhi ambang batas (treshold). Meskipun sebagian share diketahui, rahasia tetap aman secara sistematis. Melalui simulasi manual berbasis polinomial dan interpolasi Lagrange, keamanan SSS tidak bergantung pada kerahasiaan algoritma, melainkan pada prinsip matematika dan pemilihan treshold yang tepat.
 
 ---
 
@@ -108,12 +157,10 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week11-secret-sharing
+Author: Laeli Maharani <laelimaharani09@gmail.com>
+Date:   2025-12-29
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week11-secret-sharing: implementasi Shamir's Secret Sharing dan laporan )
 ```
