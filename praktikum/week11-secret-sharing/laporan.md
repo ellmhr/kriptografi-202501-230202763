@@ -107,7 +107,9 @@ print("\nRecovered Secret:", recovered_secret)
 
 ## 6. Hasil dan Pembahasan
 Hasil eksekusi program: 
-Langkah 2 -- Aimulasi Manual (Tanpa Library)
+
+Langkah 2 -- Simulasi Manual (Tanpa Library)
+
 ![Hasil Eksekusi](screenshots/hasil_secret_sharing.png)
 
 Pada tahap ini, Shamir Secret Sharing diimplementasikan secara manual untuk memahami konsep matematis di balik pembagian rahasia. Proses diawali dengan memilih sebuah bilangan prima p yang cukup besar sebagai modulus, sehingga seluruh perhitungan dilakukan dalam aritmetika modulo untuk menjaga keamanan data.
