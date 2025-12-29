@@ -1,25 +1,30 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 12  
+Topik: Aplikasi TLS & E-commerce 
+Nama: Laeli Maharani  
+NIM: 230202763  
+Kelas: 5IKRB  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Menganalisis penggunaan kriptografi pada email dan SSL/TLS
+2. Menjelaskan enkripsi dalam transaksi e-commerce.
+3. Mengevaluasi isu etika & privasi dalam penggunaan kriptografi di kehidupan sehari-hari.
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Transport Layer Security (TLS) adalah protokol keamanan yang digunakan untuk melindungi komunikasi data melalui jaringan publik seperti internet. TLS menyediakan tiga tujuan utama, yaitu kerahasiaa melaui enkripsi, integritas data melalui mekanisme hash dan Message Authentication Code (MAC), serta autentikasi menggunakan sertifikat digital berbasis Publik key infrastrukture. Protokol ini memastikan bahwa data yang dikirim tidak dapat dibaca atau dimodifikasi oleh pihak yang tidak berwenang.
+
+Dalam konteks e-commerce, TLS berperan penting untuk mengamankan transaksi online seperti login pengguna, pertukaran data pribadi, dan pembayaran elektronik. TLS mencegah serangan seperti penyadapan, manipulasi data, dan MITM dengan cara mengenkripsi komunikasi antara browser pelanggan dan server toko online. Keamanan ini ditandai dengan menggunakan HTTPS dan icon gembok pada browser.
+
+Dengan adanya TLS, pengguna dapat bertransaksi secara aman dan percaya bahwa identitas server telah diverifikasi oleh Certificate Authority. Hal ini meningkatkan kepercayaan konsumen, menjaga keamanan data sensitif, dan menjadi komponen wajib dalam sistem e-commerce modern.
 
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
+- Python 3.x  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
 - Library tambahan (misalnya pycryptodome, jika diperlukan)  )
