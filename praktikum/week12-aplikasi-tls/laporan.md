@@ -92,11 +92,12 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 7. Jawaban Pertanyaan
+
 1.  Apa perbedaan utama antara HTTP dan HTTPS?
 Perbedaan utama antara HTTP dan HTTPS terletak pada aspek keamanannya. HTTP mengirimkan data tanpa enkripsi, sehingga informasi seperti username, password, dan data transaksi dapat dengan mudah disadap oleh pihak ketiga.
 Sebaiknya, HTTPS (HTTP Secure) menggunakan SSL/TLS untuk mengenkripsi komunikasi antara klien dan server. Dengan HTTPS, data yang dikirimkan menjadi lebih aman, terlindungi dari penyadapan, serta menjamin keaslian server yang diakses pengguna.
 
-# 2 Mengapa sertifikat digital menjadi penting dalam komunikasi TLS?
+2 Mengapa sertifikat digital menjadi penting dalam komunikasi TLS?
 
 Sertifikat digital berfungsi sebagai bukti identitas server dalam komuniasi TLS. Sertifikat ini diterbitkan oleh Certificate Authority (CA) yang terpercaya dan berisi informasi tentang pemiliki website serta kunci publiknya.
 Dengan adanya sertifikat digital:
@@ -105,7 +106,7 @@ Dengan adanya sertifikat digital:
 - Proses pertukaran kuni enkripsi dapat dilakukan secara aman.
 Tanpa sertifikat digital, tidak ada jaminan bahwa server yang diakses adalah server asli.
 
-# Bagaimana kriptografi mendukung privasi dalam komunikasi digital, tetapi sekaligus menimbulkan tantangan hukum dan etika?
+Bagaimana kriptografi mendukung privasi dalam komunikasi digital, tetapi sekaligus menimbulkan tantangan hukum dan etika?
 
 Kriptogradi mendukung privasi dengan cara mengenkripsi data, sehingga hanya pihak yang berwenang yang dapat membaca isi komunikasi. Hal ini melindungi informasi pribadi, rahasia bisnis, dan komunikasi sensitif dari penyadapan atau penyalahgunaan.
 Namun, kriptografi juga menimbulkan tantangan hukum dan etikal, karena:
