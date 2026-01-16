@@ -120,12 +120,13 @@ Berdasarkan hasil percobaan brute force sederhana terhadap hash MD5, terlihat ba
 ---
 
 ## 7. Jawaban Pertanyaan
+
 1. Mengapa banyak sistem lama masih tentan terhadap brute fordce atau dictionary attack?
 Banyak sistem lama masih tenan karena dirancang pada masa ketika daya komputasi masih terbatas, sehingga algoritma dan mekanisme keamanannya tidak memperhitungkan keamampuan serangan modern. Contohnya, penggunaan hash lemah seperti MD5 atau SHA-1 dan passwoerd tanpa salt membuat proses brute force atau dictionary attack menjadi sangat cepat.
 
-Selain itu, sistem lama sering menggunakan password sederhana dan tidak menerapkan pembatasan percobaan login (rate limiting). Hal ini memungkinkan penyerang mencoba ribuan hingga jutaan kombinasi password tanpa terdeteksi atau diblokir.
+    Selain itu, sistem lama sering menggunakan password sederhana dan tidak menerapkan pembatasan percobaan login (rate limiting). Hal ini memungkinkan penyerang mencoba ribuan hingga jutaan kombinasi password tanpa terdeteksi atau diblokir.
 
-Faktor lain adalah kurangnya pembaruan sistem. Banyak organisasi tetap menggunakan sistem lama karena alasan kompatibilitas, biaya, atau risiko imigrasi, sehingga celak keamanan tetap terbuka.
+    Faktor lain adalah kurangnya pembaruan sistem. Banyak organisasi tetap menggunakan sistem lama karena alasan kompatibilitas, biaya, atau risiko imigrasi, sehingga celak keamanan tetap terbuka.
 
 2. Perbedaan kelemahan algoritma dan kelemahan implementasi
 
@@ -142,7 +143,7 @@ Kelemahan algoritma terjadi ketika secara matematis algoritma sudah tidak aman, 
 3. Bagaimana organisasi memastikan sistem kriptografi tetap aman di masa depan?
 Organisasi Harus menerapkan pembaruan algoritma secara berkala, mengikuti standar keamanan terbaru seperti penggunaan AES, SHA-256, ECC, serta mekanisme hash password modern seperti bcrypt, scrypt, atau Argon2. Selain itu, penging untuk menerapkan kebijakan pasword yang kuat dan proteksi seperti rate limiting dan multi-factor authentication (MFA).
 
-Audit keamanan dan penetration testing secara tutin juga diperlukan untuk mendeteksi kelemahan sejak dini. Dengan kombinasi algoritma kuat, implementasi yang benar, dan kebijakan keamanan yang baik, sistem kriptografi dapat tetap aman menghadapi ancaman di masa depan.
+    Audit keamanan dan penetration testing secara tutin juga diperlukan untuk mendeteksi kelemahan sejak dini. Dengan kombinasi algoritma kuat, implementasi yang benar, dan kebijakan keamanan yang baik, sistem kriptografi dapat tetap aman menghadapi ancaman di masa depan.
 
 ---
 
