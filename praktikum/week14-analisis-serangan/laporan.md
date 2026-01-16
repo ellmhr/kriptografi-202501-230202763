@@ -138,7 +138,7 @@ Banyak sistem lama masih tenan karena dirancang pada masa ketika daya komputasi 
 | Penyebab umum | Perkembangan komputasi dan kriptanalisis | Kesalahan konfigurasi atau coding |
 | Solusi | Mengganti algoritma ke yang lebih aman | Memperbaiki implementasi dan konfigurasi |
 
-    Kelemahan algoritma terjadi ketika secara matematis algoritma sudah tidak aman, sehingga harus diganti. Sedangkan kelemahan implementasi muncul akibat kesalahan konfigurasi, coding, atau kebijakan keamanan, meskipun algoritma yang digunakan sebenarnya kuat.
+Kelemahan algoritma terjadi ketika secara matematis algoritma sudah tidak aman, sehingga harus diganti. Sedangkan kelemahan implementasi muncul akibat kesalahan konfigurasi, coding, atau kebijakan keamanan, meskipun algoritma yang digunakan sebenarnya kuat.
 
 3. Bagaimana organisasi memastikan sistem kriptografi tetap aman di masa depan?
 Organisasi Harus menerapkan pembaruan algoritma secara berkala, mengikuti standar keamanan terbaru seperti penggunaan AES, SHA-256, ECC, serta mekanisme hash password modern seperti bcrypt, scrypt, atau Argon2. Selain itu, penging untuk menerapkan kebijakan pasword yang kuat dan proteksi seperti rate limiting dan multi-factor authentication (MFA).
