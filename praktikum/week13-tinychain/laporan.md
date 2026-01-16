@@ -93,23 +93,24 @@ my_chain.add_block(Block(2, "", "Transaksi B → C: 5 Coin"))
 ```
 Langkah 3 -- Analisis Proof of Work
 - Perhatikan bahsa proses mining membutuhkan waktu (bergantung pada `difficulty`)
+Beerdasarkan hasil eksekusi program, terlihat bahwa setiap blok harus melalui proses mining sebelum berhasil ditambahkan ke dalam blockchain. Proses mining dilakukan dengan mencari nilai `nonce` yang menghasilkan hash dengan awalan nol sebanyak nilai `difficulty` yang ditentukan. Pada program ini, tingkat kesulitan ditetapkan sebesar 4, sehingga hash yang valid harus diawali dengan empat karakter `0`, seperti yang terlihat pada hasil :
+```
+0000f5ac9fe4d62d...
+0000ca088be99dc1...
+```
 - Analisis: semakin tinggi difficulty, semakin lama proses mining.
+Proses pencarian hash yang memnuhi syarat tersebut dilakukan secara berulang (trial and error), sehingga membutuhkan waktu komputasi. Semakin tinggi nilai `difficulty`, semakin banyak percobaan yang harus dilakukan untuk menemukan hash yang valid. Hal ini menyebabkan waktu mining menjadi lebih lama dan membutuhkan sumber daya komputasi yang lebih besar.
 - Diskusikan bagaimana hal ini menjamin keamanan blockchain.
+Mekanisme ini menjamin keamanan blockchain karena membuat pemalsuan data menjadi sulit. Jika seseorang ingin merubah isi satu blok, maka nilai hash blok tersebut akan berubah dan tidak lagi memenuhi syarat difficulty. Akibatnya penyerang harus melakukan proses mining ulang tidak hanya pada blok tersebut, tetapi juga pada seluruh blok setelahnya. Dengan difficulty yang tinggi dan banyaknya blok, usaha ini menjadi sangat mahal secara komputasi dan waktu, sehingga blockchain tetap aman dari manupulasi data.
   
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil eksekusi program TinyChain : 
+![Hasil Eksekusi](screenshots/hasil_tinychain.png)
+Pada saat program dijalankan, sistem memulai proses dengan membuat sebuah genesis blok sebagai blok pertama dalam blockchain. Setelah itu, program melakukan proses mining untuk Block 1 yang berisi data transaksi "Transaksi A -> B: 10 Coin". Proses mining berjalan hingga ditemukan nilai hash yang memenuhi tingkat kesulitan (difficulty) yang ditentukan, yaitu hash dengan empat angka nol di dibagian awal. Setelah hash yang valid ditemukan, block berhasil ditambang dan ditambahkan ke dalam blockchain.
 
-Hasil eksekusi program Caesar Cipher:
-
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Selanjutnya, program melakukan proses mining untuk Block 2 yang berisi data transaksi "Transaksi B -> C: 5 Coin", Proses yang sama kembali dilakukan, di mana sistem menyesuaikan nilai `nonce` hingga menghasilkan hash sesuai dengan tingkat kesulitan. Setelah hash yang valid diperoleh, program menampilkan hasil mining dan blok kedua berhasil ditambahkan ke blockchain. Hasil eksekusi menunjukkan bahwa setiap blok memiliki hash yang unik dan memnuhi syarat PoW sebelum disimpan dalam rantai blockchain.
 
 ---
 
@@ -127,7 +128,7 @@ Kelemahan utama PoW adalah konsumsi energi yang sangat tinggi. Proses penambanga
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Berdasarkan hasil praktikum, dapat simimpulkan bahwa mekanisme Proof of Work bekerja dengan cara mencari nilai hash yang memenui tingkat kesulitasn tertentu sebelum sebuah blok dapat ditambahkan ke dalam blockchain. Proses mining ditunjukan pada program berhasil menghasilkan hash valid melalui penyesuaian nilai nonce. Hal ini membuktikan bahwa PoW berperan penting dalam menjagga keabsahan dan keamanan data pada sistem blockchain.
 
 ---
 
@@ -140,12 +141,11 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+```
+commit week13_tinychain_pow
+Author: Laeli Maharani <laelimaharani09@gmail.com>
+Date:   2025-01-16
+
+    week13-tinychain-pow: implementasi tinychain dan laporan )
 ```
