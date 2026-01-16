@@ -32,12 +32,11 @@ Melalui mekanisme PoW, TinyChain mampu menjaga integritas data dan kepercayaan a
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `tinychain.py` di folder `praktikum/week13-tinychain/src/`.
 2. Menyalin kode program dari panduan praktikum.
 3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
-
+4. Melakukan analisis hasil eksekusi program.
+   
 ---
 
 ## 5. Source Code
