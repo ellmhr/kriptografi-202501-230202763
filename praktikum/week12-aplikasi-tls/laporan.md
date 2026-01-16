@@ -46,6 +46,8 @@ perbandingan HTTPS dan HTTP:
 - Website dengan HTTPS menyediakan enkripsi, autentikasi server, dan perlindungan terhadap penyadapan data.
 - Website tanpa HTTPS tidak mengenkripsi data sehingga informasi login dan transaksi mudah disadap (rentan terhadap serangan Man-in-the-Middle).
 
+---
+
 # Langkah 2 -- Studi Kasus E-Commerce (Shopee)
 
 Pada website e-commercce seperti Shopee, enkripsi TLS digunakan untuk menlindungi data sensitif pengguna, terutama saat:
@@ -59,6 +61,8 @@ JIka TLS tidak digunakan, maka risiko keamanan yang dapat terjadi antara lain:
 - Pencurian kredensial: username dan password dapat diambil.
 - Pemalsuan website : pengguna bisa diarahkan ke situs palsu tanpa disadari.
 
+---
+
 # Langkah 3 --Analisis Etika & Privasi
 
 Dalam penggunaan email terenkripsi seperti PGP atau S/MIME, terdapat isu privasi penting, yaitu bahwa isi pesan hanya dapat dibaca oleh pengirim dan penerima yang memiliki kunci yang sesuai. Hal ini melindungi kerahasiaan komunikasi pribadi dan profesional.
@@ -66,7 +70,6 @@ Dalam penggunaan email terenkripsi seperti PGP atau S/MIME, terdapat isu privasi
 Dari sisi etika, muncul dilema seperti :
 - Apakah perusahaan boleh mendekripsi email karyawan untuk keperluan audit? Hal ini dapat dibenarkan jika ada kebijakan tertulis dan persetujuan karyawan.
 - Bagaimana peran pemerintah dalam pengawasan komunikasi terenkripsi? Pemerintah perlu menyeimbangkan antara keamanan nasional dan hak privasi individu agar tidak melanggar kebebasan berkomunikasi.
-
 
 
 ---
@@ -77,17 +80,11 @@ Dari sisi etika, muncul dilema seperti :
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil analisis Sertifikat Digital pada website Shopee
 
-Hasil eksekusi program Caesar Cipher:
+![Hasil Eksekusi](screenshots/sertifikat.png)
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Berdasarkan hasil pemeriksaan sertifikat digital pada website Shopee https://shopee.co.id diketahui bahwa sertifikat SSL/TLS Shopee diterbitkan oleh GlobalSign GCC R6 AlphaSSL CA 2023, yang merupakan Certificate Authority (CA) terpercaya secara internasional. Sertifikat ini digunakan untuk domain shopee.co.id, sehingga mampu mengamankan komunikasi pada seluruh subdomain Shopee. Masa berlaku sertifikat dimulai pada 24 Maret 2025 dan akan berakhir pada 25 April 2026, menunjukkan bahwa sertifikat masih valid dan aktif. Penggunaan CA terpercaya ini menjamin keaslian identitas server Shopee serta memastikan bahwa pertukaran data antara pengguna dan server terlindungi dari penyadapan dan serangan pihak ketiga.
 
 ---
 
@@ -97,7 +94,7 @@ Hasil eksekusi program Caesar Cipher:
 Perbedaan utama antara HTTP dan HTTPS terletak pada aspek keamanannya. HTTP mengirimkan data tanpa enkripsi, sehingga informasi seperti username, password, dan data transaksi dapat dengan mudah disadap oleh pihak ketiga.
 Sebaiknya, HTTPS (HTTP Secure) menggunakan SSL/TLS untuk mengenkripsi komunikasi antara klien dan server. Dengan HTTPS, data yang dikirimkan menjadi lebih aman, terlindungi dari penyadapan, serta menjamin keaslian server yang diakses pengguna.
 
-2 Mengapa sertifikat digital menjadi penting dalam komunikasi TLS?
+2.  Mengapa sertifikat digital menjadi penting dalam komunikasi TLS?
 
 Sertifikat digital berfungsi sebagai bukti identitas server dalam komuniasi TLS. Sertifikat ini diterbitkan oleh Certificate Authority (CA) yang terpercaya dan berisi informasi tentang pemiliki website serta kunci publiknya.
 Dengan adanya sertifikat digital:
@@ -106,7 +103,7 @@ Dengan adanya sertifikat digital:
 - Proses pertukaran kuni enkripsi dapat dilakukan secara aman.
 Tanpa sertifikat digital, tidak ada jaminan bahwa server yang diakses adalah server asli.
 
-Bagaimana kriptografi mendukung privasi dalam komunikasi digital, tetapi sekaligus menimbulkan tantangan hukum dan etika?
+3. Bagaimana kriptografi mendukung privasi dalam komunikasi digital, tetapi sekaligus menimbulkan tantangan hukum dan etika?
 
 Kriptogradi mendukung privasi dengan cara mengenkripsi data, sehingga hanya pihak yang berwenang yang dapat membaca isi komunikasi. Hal ini melindungi informasi pribadi, rahasia bisnis, dan komunikasi sensitif dari penyadapan atau penyalahgunaan.
 Namun, kriptografi juga menimbulkan tantangan hukum dan etikal, karena:
@@ -132,12 +129,11 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+```
+commit week12-aplikasi-tls
+Author: Laeli Maharani <laelimaharani09@gmail.com>
+Date:   2025-01-16
+
+    week12-aplikasi-tls: implementasi Certificate Authority dan laporan 
 ```
