@@ -128,6 +128,7 @@ Selain itu, sistem lama sering menggunakan password sederhana dan tidak menerapk
 Faktor lain adalah kurangnya pembaruan sistem. Banyak organisasi tetap menggunakan sistem lama karena alasan kompatibilitas, biaya, atau risiko imigrasi, sehingga celak keamanan tetap terbuka.
 
 2. Perbedaan kelemahan algoritma dan kelemahan implementasi
+
 | Aspek | Kelemahan Algoritma | Kelemahan Implementasi |
 |------|-------------------|----------------------|
 | Sumber masalah | Desain algoritma kriptografi itu sendiri | Cara algoritma diterapkan dalam sistem |
@@ -135,6 +136,7 @@ Faktor lain adalah kurangnya pembaruan sistem. Banyak organisasi tetap menggunak
 | Dampak | Algoritma tidak aman walaupun diimplementasikan dengan benar | Algoritma kuat tetap bisa dibobol |
 | Penyebab umum | Perkembangan komputasi dan kriptanalisis | Kesalahan konfigurasi atau coding |
 | Solusi | Mengganti algoritma ke yang lebih aman | Memperbaiki implementasi dan konfigurasi |
+
 Kelemahan algoritma terjadi ketika secara matematis algoritma sudah tidak aman, sehingga harus diganti. Sedangkan kelemahan implementasi muncul akibat kesalahan konfigurasi, coding, atau kebijakan keamanan, meskipun algoritma yang digunakan sebenarnya kuat.
 
 3. Bagaimana organisasi memastikan sistem kriptografi tetap aman di masa depan?
