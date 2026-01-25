@@ -1,7 +1,7 @@
 # Laporan Praktikum Kriptografi
 Minggu ke-: 15  
 Topik: TinyCoin ERC20  
-Nama: laeli Maharani  
+Nama: Laeli Maharani  
 NIM: 2300202763  
 Kelas: 5IKRB  
 
@@ -96,9 +96,9 @@ Pengecekan saldo awal menggunakan fungsi `balance0f(address)`. Alamat yang dimas
 
 Proses Transfer Token
 ![Hasil Eksekusi](screenshots/transaksi_berhasil.png)
-Pada tahap inidilakukan pengujian fungsi `transfer(address, amount). dengan memasukkan :
+Pada tahap ini dilakukan pengujian fungsi `transfer(address, amount)`. dengan memasukkan :
 - Alamat penerima : Account[1] / Account[2]
-- JUmlah token : 15.000
+- Jumlah token : 15.000
 Setelah tomnol transact ditekan, terminal berwarna hijau muncul, yang menandakan bahwa transaksi berhasil dieksekusi tanpa error.
 
 ---
