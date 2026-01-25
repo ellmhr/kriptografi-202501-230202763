@@ -54,7 +54,7 @@ contract TinyCoin is ERC20 {
     }
 }
 
-)
+```
 
 ---
 
