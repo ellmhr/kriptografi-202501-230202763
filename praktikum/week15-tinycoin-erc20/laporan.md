@@ -2,7 +2,7 @@
 Minggu ke-: 15  
 Topik: TinyCoin ERC20  
 Nama: Laeli Maharani  
-NIM: 2300202763  
+NIM: 230202763  
 Kelas: 5IKRB  
 
 ---
