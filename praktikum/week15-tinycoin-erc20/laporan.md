@@ -41,23 +41,24 @@ Contoh format:
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
-
+Kontrak ERC-20
 ```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract TinyCoin is ERC20 {
+    constructor(uint256 initialSupply) ERC20("TinyCoin", "TNC") {
+        _mint(msg.sender, initialSupply);
+    }
+}
+
 
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+
 
 Hasil eksekusi program Caesar Cipher:
 
