@@ -26,17 +26,40 @@ Secara teori, penggunaan standar ERC-20 pada TinyCoin memudahkan interperobabili
 ## 3. Alat dan Bahan
 - Python 3.x  
 - Visual Studio Code / editor lain  
-- Git dan akun GitHub  
+- Git dan akun GitHub
+- Remix IDE
+- Browser
 - Library tambahan (misalnya pycryptodome, jika diperlukan)  )
 
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+1. Pembuatan Kontrak
+   - Membuka Remix IDE melalui browser.
+   - Membuat file `TinyCoin.sol` di folder `contracts`.
+   - Menuliskan kode kontrak ERC-20 TinyCoin dan menyimpannya.
+2. Kompilasi Kontrak
+   - Membuka menu Solidity Compiler di Remix
+   - Memilih versi compiler yang sesuai (Solidity 0.8.x).
+   - Tekan tombol Compile TinyCoin.sol hingga status berhasil.
+3. Deploy Kontrak
+   - Membuka menu Deploy & Run Transactions.
+   - Memilih Environtment: JavaScript VM
+   - Memilih Account[0] sebagai akun deployer
+   - Mengisi nilai initalSupply (misalnya 1000000).
+   - Tekan tombol Deploy hingga kontrak muncul di Deployed Contracts.
+4. Uji Saldo Awal
+   - Memanggil fungsi balanceOf(address).
+   - Memastikan alamat Acount[0].
+   - Saldo awal tampil sesuai dengan initialSupply.
+5. Transfer Token
+   - Memastikan akun aktif adalah Account[0].
+   - Memanggil fungsi transfer(addres, amount).
+   - Mengisi alamat akun penerima dan jumlah token (misalnya 15000).
+   - Menjalankan transaksi hingga terminal menunjukkan transaksi berhasil.
+6. Verifikasi Hasil
+   - Mengecek saldo akun pengirim dan penerima dengan balanceOf.
+   - Memanggil totalSupply() untuk memastikan jumlah token tetap sama.
 
 ---
 
@@ -59,14 +82,49 @@ contract TinyCoin is ERC20 {
 ---
 
 ## 6. Hasil dan Pembahasan
+Langkah 1 -- Hasil Deploy Contract
+![Hasil Eksekusi](screenshots/hasil_deploy.png)
+Proses deployment kontrak TinyCoin.sol menggunakan Remix IDE pada jaringan JavaScript VM, saat melakukan deploy, initailSupply diisi sebesar 1.000.000, yang berarti seluruh token awal dicetak dan diberikan ke Account[0] (akun deployer). Kontrak berhasil di-deploy tanpa error dan menghasilkan alamat kontrak, menandakan kontrak siap digunakan untuk pengujian fungsi ERC-20.
 
+---
 
-Hasil eksekusi program Caesar Cipher:
+Informasi Saldo Account[0] Sebelum Transfer
+![Hasil Eksekusi](screenshots/before_transfer.png)
+Pengecekan saldo awal menggunakan fungsi `balance0f(address)`. Alamat yang dimasukkan adalah Account[0], yaitu akun yang digunakan saat deploy kontrak. Hasilnya menampilkan saldo sebesar 1.000.000 token, sesuai dengan nilai initial supply yang diinput saat deployment.
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+---
+
+Proses Transfer Token
+![Hasil Eksekusi](screenshots/transaksi_berhasil.png)
+Pada tahap inidilakukan pengujian fungsi `transfer(address, amount). dengan memasukkan :
+- Alamat penerima : Account[1] / Account[2]
+- JUmlah token : 15.000
+Setelah tomnol transact ditekan, terminal berwarna hijau muncul, yang menandakan bahwa transaksi berhasil dieksekusi tanpa error.
+
+---
+
+Informasi Saldo Account[0] Setelah Transfer
+![Hasil Eksekusi](screenshots/sisa_akun1.png)
+Hasil pengecekan ulang saldo Account[0] setelag proses transfer. Saldo berkurang dari 1.000.000 menjadi 985.000 token, yang merupakan hasil pengurangan 15.000 token yang dikirim ke akun penerima. Hal ini menunjukkan bahwa mekanisme pengurangan saldo pengirim bekerja dengan benar.
+
+---
+
+Informasi Saldo Account Penerima Setelah Transfer
+![Hasil Eksekusi](screenshots/info_akun2.png)
+Hasil pemanggilan fungsi `balance0f` pada akun penerima. Saldi akun penerima bertambah menjadi 15.000 token, sesuai dengan jumlah yang dikirim oleh Account[0]. Ini membuktikan bahwa token berhasil diterima oleh alamat tujuan.
+
+---
+
+Informasi Total Supply Token
+![Hasil Eksekusi](screenshots/totalSupply.png)
+Hasil pemanggilan fungsi `totalSupply`. Nilai total supply tetap 1.000.000 token, baik sebelum maupun setelah transfer. Hal ini menegaskan bahwa proses transfer ERC-20 tidak menciptakan atau menghilangkan token, melainkan hanya memindahkan kepemilikan token antar akun.
+
+---
+
+Analisis Keamanan Smart Kontrak
+
+Kontrak TinyCoin menggunakan standar ERC29 dari OpenZeppelin yang telah diaudit dan relatif aman. Risiko seperti integer oferflow/underflow sudah dimitigasi secara otomatis oleh Solidity versi >_ 0.8. Selain itu, kontrak ini tidak mengandung fungsi eksternal kompleks sehingga risiko reentrancy sangat kecil. Namun, pada implementasi nyata, pengelolaan fungsi mint dan kontrol akses perlu diperhatikan agar tidak disalahgunakan.
+
 
 ---
 
@@ -102,7 +160,7 @@ Cara mitigasi risiko:
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Berdasarkan percobaan yang telah saya lakukan, kontrak TinyCoin ERC20 berhail dibuat, dikompilasi, dan di-deploy dengan baik menggunakan Remix IDE. Pengujian fungsi `balanceOf` dan `transfer` menunjukkan bahwa mekanisme distribusi token berjalan sesuai standar ERC20 dan total supply ERC20 dapat digunakan untuk mengelola token digital secara aman dan terstruktur.
 
 ---
 
@@ -115,12 +173,11 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+```
+commit week15-tinycoin-erc20
+Author: Laeli Maharani <laelimaharani09@gmail.com>
+Date:   2026-01-25
+
+    week15-tinycoin-erc20: implementasi tinycoin ERC-20 dan laporan )
 ```
