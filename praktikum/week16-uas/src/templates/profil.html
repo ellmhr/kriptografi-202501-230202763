@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - EduToken</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2ff;
+            --secondary: #8a2be2;
+            --dark: #0d1117;
+            --card-bg: #161b22;
+        }
+        
+        body {
+            background: var(--dark);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .profile-container {
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .profile-card {
+            background: var(--card-bg);
+            border: 2px solid var(--primary);
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(0, 242, 255, 0.05),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .profile-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.4);
+        }
+        
+        .username {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+        }
+        
+        .role {
+            color: #8b949e;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-box {
+            background: rgba(0, 242, 255, 0.05);
+            border: 1px solid #30363d;
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-box:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 242, 255, 0.2);
+        }
+        
+        .stat-label {
+            color: #8b949e;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-value {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--primary),
+                transparent
+            );
+            margin: 2rem 0;
+        }
+        
+        .action-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-dashboard {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .btn-dashboard:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.5);
+        }
+        
+        .btn-logout {
+            background: transparent;
+            border: 2px solid #ef4444;
+            color: #ef4444;
+        }
+        
+        .btn-logout:hover {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .badge-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        
+        .achievement-badge {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid #ffd700;
+            color: #ffd700;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 576px) {
+            .profile-card {
+                padding: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .username {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-content">
+                
+                <!-- Avatar -->
+                <div class="avatar">👤</div>
+                
+                <!-- Username -->
+                <h2 class="username">{{ user }}</h2>
+                <p class="role">🎓 Blockchain Student</p>
+                
+                <!-- Achievement Badges -->
+                <div class="badge-wrapper">
+                    <span class="achievement-badge">🔰 Pemula</span>
+                    <span class="achievement-badge">📚 Learner</span>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <!-- Statistics -->
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-label">🎯 Kuis Selesai</div>
+                        <div class="stat-value">{{ stats.total_earned // 2 }}</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">💸 Transfer</div>
+                        <div class="stat-value">{{ stats.transaction_count }}</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">💎 Total Earned</div>
+                        <div class="stat-value">{{ stats.total_earned }}</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">📤 Total Sent</div>
+                        <div class="stat-value">{{ stats.total_sent }}</div>
+                    </div>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <!-- Action Buttons -->
+                <a href="/dashboard" class="action-btn btn-dashboard">
+                    🏠 KEMBALI KE DASHBOARD
+                </a>
+                <a href="/logout" class="action-btn btn-logout">
+                    🚪 LOGOUT
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
