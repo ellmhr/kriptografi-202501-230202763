@@ -1,6 +1,6 @@
 # Laporan Praktikum Kriptografi
 Minggu ke-: 16  
-Topik: UAS KRIPTOGRAFI  
+Topik: Ujian Akhir Semester 
 Nama: Laeli Maharani  
 NIM: 230202763  
 Kelas: 5IKRB  
