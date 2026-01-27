@@ -40,7 +40,51 @@ Sebagai solusi atas tantangan tersebut, platform EduToken dikembangkan untuk men
 
 ## 4. Langkah Percobaan
 1. Login ke website EduToken
+![Hasil Eksekusi](screenshots/login.png)
+- Login ke website EduToken dengan masuk melalui : https://edutoken-crypto.onrender.com/
+- User diminta login dengan memasukkan username dan password.
+
+---
+2. Tampilan Dashboard EduToken
+![Hasil Eksekusi](screenshots/dashboard.png)
+- Setelah user berhasil login akan diarahkan ke menu dashboard Edutoken yang didalamnya menampilkan informasi Saldo Wallet pada EduToken.
+- Pada bagian navigasi sidebar, tersedia bebreapa menu utama, yaitu materi dan kuis pembelajaran, informasi token, profile pengguna, dan logout.
    
+---
+3. Tampilan Menu Materi dan Kuis
+![Hasil Eksekusi](screenshots/materi_kuis.png)
+- Pada menu materi dan kuis, sistem menyediakan beberapa materi pembelajaran singkat yang terbagi menjadi materi1, materi2, dan materi3. 
+- Setelah mempelajari materi yang tersedia, user dapat melanjutkan ke tahap evaluasi dengan menekan tombol mulai kuiz untuk mengerjakan kuis pembelajaran yang telah disediakan oleh sistem.
+
+---
+4. Tampilan mengerjakan kuis
+![Hasil Eksekusi](screenshots/kuis.png)
+- Pada tahap pengerjaan kuis, sistem menampilkan halaman soal yang terdiri dari total 5 pertanyaan.
+- Setiap soal memiliki bobot reward sebesar dua token apabila dijawab dengan benar. Dengan demikian, apabila pengguna berhasil menjawab seluruh soal dengan benar, maka pengguna akan memperoleh total 10 token sebagai hasil evaluasi pembelajaran.
+
+---
+5. Tampilan Klaim Token
+![Hasil Eksekusi](screenshots/klaim_token.png)
+- Setelah pengguna menyelesaikan seluruh soal kuis, sistem menampilkan halaman evaluasi yang menunjukkan reward pembelajaran yang diperoleh.
+- Pengguna dapat menekan tombol klaim ke wallet untuk memproses pengiriman token EDU ke dompet digital milik pengguna melalui mekanisme transaksi blockchain.
+
+---
+6. Tampilan Konfirmasi Klaim
+![Hasil Eksekusi](screenshots/konfirmasi_klaim.png)
+- Setelah pengguna menekan tombol klaim ke wallet, sistem  secara otomatis akan terhubung dengan dompet digital MetaMask milik pengguna.
+- Metamask menampilkan notifikasi konfirmasi transaksi yang berisi detail pengiriman token EDU.
+- Pengguna diminta menekan tombol confirm sebagai persetujuan transaksi.
+- Setelah konfirmasi diberikan, proses klaim token berhasil dilakukan dan token EDU dikirm ke wallet pengguna melalui jaringan blockchain.
+
+---
+7. Tampilan Notifikasi Berhasil Klaim Token
+![Hasil Eksekusi](screenshots/klaim_berhasil.png)
+- Seelah dikonfirmai sistem akan memberikan notifikasi bahwa token berhasil diklaim dan klik "oke".
+
+---
+8. Tampilan Menu Info Token dan Transfer
+![Hasil Eksekusi](screenshots/transfer_token.png)
+
 
 ---
 
